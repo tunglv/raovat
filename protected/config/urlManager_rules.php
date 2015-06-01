@@ -18,8 +18,8 @@ $array_base = array(
     '/tai-khoan/them-sdt' => '/web/user/managePhone',
 
     //sản phẩn
-    '/san-pham/<alias:[\w\-]+>'=>'/web/product/list',
-    '/san-pham/chi-tiet/<alias:[\w\-]+>'=>'/web/product/detail',
+    '/san-pham/<alias:[\w\-]+>'=>'/web/object/list',
+    '/san-pham/chi-tiet/<alias:[\w\-]+>'=>'/web/object/detail',
 
     // branch
     '/<city_alias:[\w\-]+>/<alias:[\w\-]+>-<id:\d+>' => '/web/branch/view',

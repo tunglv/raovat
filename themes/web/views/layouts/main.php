@@ -87,7 +87,7 @@
     <body class="wood">
 
         <div id="wrap" class="boxed">
-            <?php $this->renderPartial('//common/header', array('catagory'=>$this->catagory)); ?>
+            <?php $this->renderPartial('//common/header', array('city'=>$this->city)); ?>
             <?php echo $content ?>
             <?php $this->renderPartial('//common/footer'); ?>
         </div><!-- End wrap -->

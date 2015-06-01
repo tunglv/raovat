@@ -28,7 +28,7 @@
     /**
      * Assign License. (licenseAssignments.insert)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku
      * @param Google_LicenseAssignmentInsert $postBody
      * @param array $optParams Optional parameters.
@@ -45,9 +45,9 @@
       }
     }
     /**
-     * Get license assignment of a particular product and sku for a user (licenseAssignments.get)
+     * Get license assignment of a particular object and sku for a user (licenseAssignments.get)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku
      * @param string $userId email id or unique Id of the user
      * @param array $optParams Optional parameters.
@@ -64,10 +64,10 @@
       }
     }
     /**
-     * List license assignments for given product and sku of the customer.
+     * List license assignments for given object and sku of the customer.
      * (licenseAssignments.listForProductAndSku)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku
      * @param string $customerId CustomerId represents the customer for whom licenseassignments are queried
      * @param array $optParams Optional parameters.
@@ -87,9 +87,9 @@
       }
     }
     /**
-     * List license assignments for given product of the customer. (licenseAssignments.listForProduct)
+     * List license assignments for given object of the customer. (licenseAssignments.listForProduct)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $customerId CustomerId represents the customer for whom licenseassignments are queried
      * @param array $optParams Optional parameters.
      *
@@ -110,7 +110,7 @@
     /**
      * Assign License. (licenseAssignments.update)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku for which license would be revoked
      * @param string $userId email id or unique Id of the user
      * @param Google_LicenseAssignment $postBody
@@ -130,7 +130,7 @@
     /**
      * Assign License. This method supports patch semantics. (licenseAssignments.patch)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku for which license would be revoked
      * @param string $userId email id or unique Id of the user
      * @param Google_LicenseAssignment $postBody
@@ -150,7 +150,7 @@
     /**
      * Revoke License. (licenseAssignments.delete)
      *
-     * @param string $productId Name for product
+     * @param string $productId Name for object
      * @param string $skuId Name for sku
      * @param string $userId email id or unique Id of the user
      * @param array $optParams Optional parameters.
@@ -185,7 +185,7 @@ class Google_LicensingService extends Google_Service {
    * @param Google_Client $client
    */
   public function __construct(Google_Client $client) {
-    $this->servicePath = 'apps/licensing/v1/product/';
+    $this->servicePath = 'apps/licensing/v1/object/';
     $this->version = 'v1';
     $this->serviceName = 'licensing';
 

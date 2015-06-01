@@ -1,7 +1,7 @@
 <?php
     // using Yii::app()->params->shop_img['img']
     return array(
-        'domain' => 'product.net',
+        'domain' => 'object.net',
         'userRemember' => 3600*24*365,
         'userPhoneEmailExpire' => 3600*24, // Thời gian có thể xác nhận email và phone
         'passwordKey' => '(76@I)',
@@ -17,12 +17,13 @@
                 '25'       => array('width' => 25, 'height' => 25, 'quality' => 80),
             ),
         ),
-        'product' => array(
-            'path' => 'upload/product/',
+        'object' => array(
+            'path' => 'upload/object/',
             'img' => array(
-                '940'       => array('width' => 940, 'height' => 365, 'quality' => 85),
-                '420'       => array('width' => 420, 'height' => 308, 'quality' => 80),
-                '157'       => array('width' => 157, 'height' => 68, 'quality' => 80)
+                '940'       => array('width' => 940, 'height' => 365, 'fix'=>'inside', 'quality' => 85),
+                'body'       => array('width' => 940, 'height' => '100%', 'fix'=>'outside','quality' => 100),
+                '420'       => array('width' => 420, 'height' => 308, 'fix'=>'outside', 'quality' => 80),
+                '157'       => array('width' => 157, 'height' => 68, 'fix'=>'outside','quality' => 80)
             ),
         ),
         'mail_receiver' => array(

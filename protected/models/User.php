@@ -65,7 +65,8 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'manager' => array(self::BELONGS_TO, 'Manager', 'manager_id'),
+//			'manager' => array(self::BELONGS_TO, 'Manager', 'manager_id'),
+            'userEmails' => array(self::HAS_MANY, 'UserEmail', 'user_id', 'order' => 'userEmails.id ASC'),
 		);
 	}
 
@@ -114,4 +115,35 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getHashPassword($password){
+        Yii::import('ext.PasswordHash');
+        $hasher = new PasswordHash(8, TRUE);
+        $hash = $hasher->HashPassword($password);
+        return $hash;
+    }
+
+    public function checkPassword($password, $hashPassword){
+        Yii::import('ext.PasswordHash');
+        $hasher = new PasswordHash(8, TRUE);
+        $check = $hasher->CheckPassword($password, $hashPassword);
+        return $check;
+    }
+
+    public function getAlias($name = ''){
+        Yii::import('ext.TextParser');
+        $name = $name ? $name : $this->name;
+        return TextParser::toSEOString($name);
+    }
+
+    public function loginAuto($id = null, $name = null){
+        $id = $id ? $id : $this->id;
+        $name = $name ? $name : $this->name;
+
+        $userIdentity = new CUserIdentity($id, '');
+        $userIdentity->setState('id', $id);
+        $userIdentity->setState('name', $name);
+
+        Yii::app()->user->login($userIdentity, Yii::app()->params->user['remember']);
+    }
 }

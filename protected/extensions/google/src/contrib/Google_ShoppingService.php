@@ -42,7 +42,7 @@
      * @opt_param bool categoryRecommendations.enabled Whether to return category recommendation information
      * @opt_param string facets.discover Facets to discover
      * @opt_param string categoryRecommendations.category Category for which to retrieve recommendations
-     * @opt_param string startIndex Index (1-based) of first product to return
+     * @opt_param string startIndex Index (1-based) of first object to return
      * @opt_param string availability Comma separated list of availabilities (outOfStock, limited, inStock, backOrder, preOrder, onDisplayToOrder) to return
      * @opt_param string crowdBy Crowding specification
      * @opt_param bool spelling.enabled Whether to return spelling suggestions
@@ -86,12 +86,12 @@
       }
     }
     /**
-     * Returns a single product (products.get)
+     * Returns a single object (products.get)
      *
      * @param string $source Query source
      * @param string $accountId Merchant center account id
      * @param string $productIdType Type of productId
-     * @param string $productId Id of product
+     * @param string $productId Id of object
      * @param array $optParams Optional parameters.
      *
      * @opt_param string categories.include Category specification
@@ -125,7 +125,7 @@
  * Service definition for Google_Shopping (v1).
  *
  * <p>
- * Lets you search over product data.
+ * Lets you search over object data.
  * </p>
  *
  * <p>

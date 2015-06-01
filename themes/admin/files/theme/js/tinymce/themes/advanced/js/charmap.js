@@ -85,7 +85,7 @@ var charmap = [
 	['&isin;',    '&#8712;', false,'element of'],
 	['&notin;',   '&#8713;', false,'not an element of'],
 	['&ni;',      '&#8715;', false,'contains as member'],
-	['&prod;',    '&#8719;', true, 'n-ary product'],
+	['&prod;',    '&#8719;', true, 'n-ary object'],
 	['&and;',     '&#8743;', false,'logical and'],
 	['&or;',      '&#8744;', false,'logical or'],
 	['&not;',     '&#172;',  true, 'not sign'],

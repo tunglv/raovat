@@ -13,7 +13,7 @@
         //title, desc for site
         public $title;
         public $desc;
-        public $catagory;
+        public $city;
 
         public $responsive1200 = FALSE;
 
@@ -22,7 +22,7 @@
             
             $this->user = Yii::app()->user->user;
             $this->manager = Yii::app()->userAdmin->manager;
-            $this->catagory = Catagory::model()->findAll('status=:status', array(':status'=>'ENABLE'));
+            $this->city = Province::model()->findAll();
 //            $this->_lessc();
 
         }

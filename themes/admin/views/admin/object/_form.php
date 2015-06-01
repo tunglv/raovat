@@ -1,6 +1,8 @@
 <script type="text/javascript" src="/files/editors/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="/files/editors/tiny_mce/editor_admin.js"></script>
 <script type="text/javascript" src="/files/js/relCopy.jquery.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
 <style>
     .checkbocklist {
         width:100px;
@@ -34,11 +36,31 @@
     }
 
 </style>
+<script>
+    $(function(){
+        $("#Object_date_start, #Object_date_end").datetimepicker({
+//            //timeFormat: "hh:mm",
+//            //controlType: 'select',
+//            showButtonPanel: true,
+//            addSliderAccess: true,
+//            sliderAccessArgs: { touchonly: false },
+//            timeOnlyTitle: 'Chọn thời gian',
+//            timeText: 'Thời gian',
+//            hourText: 'Giờ',
+//            minuteText: 'Phút',
+//            closeText: 'Đóng',
+//            stepMinute: 5
+            'dateFormat':'dd-mm-yy',
+            'timeFormat':'hh:mm TT'
+
+        });
+    });
+</script>
 <div class="grid_4">       
     <div class="da-panel">
         <div class="da-panel-header">
             <span class="da-panel-title">
-                Mẹo hay
+                Rao vặt
             </span>
         </div>
 
@@ -49,7 +71,7 @@
                 <?php $this->widget('admin.components.widgets.AlertWidget');?>
 
                 <?php $form=$this->beginWidget('CActiveForm', array(
-                        'id'=>'product-form',
+                        'id'=>'object-form',
                         'enableClientValidation'=>true,
                         'clientOptions'=>array(
                             'validateOnSubmit'=>true,
@@ -57,31 +79,25 @@
                         //'enableAjaxValidation'=>true,
                         'htmlOptions' => array('class' => 'stdform', 'enctype' => 'multipart/form-data')
                     )); ?>
-                <h4 class="widgettitle">Nội dung sản phẩm</h4>
+                <h4 class="widgettitle">Nội dung tin rao vặt</h4>
                 <div class="par control-group">
-                    <?php echo $form->labelEx($model,'name', array('class' => 'control-label')); ?>
+                    <?php echo $form->labelEx($model,'title', array('class' => 'control-label')); ?>
                     <div class="controls">
-                        <?php echo $form->textField($model,'name',array('maxlength'=>64, 'class' => 'input-large')); ?>
-                        <?php echo $form->error($model,'name', array('class' => 'help-inline error'));?>
-                        <?php echo $form->textField($model,'alias',array('maxlength'=>250, 'class' => 'input-large', 'placeholder' => 'Url Post Name')); ?>
+                        <?php echo $form->textField($model,'title',array('maxlength'=>255, 'class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'title', array('class' => 'help-inline error'));?>
+                        <?php echo $form->textField($model,'alias',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Url Post Name')); ?>
                     </div>
-                    <small class="desc">Name should be 50-64 chars <span id="name_char_count"></span></small>
+                    <small class="desc">Name should be 255 chars <span id="name_char_count"></span></small>
                 </div>
                 
                 <div class="par control-group">
                     <?php echo $form->labelEx($model,'status', array('class' => 'control-label')); ?>
                     <div class="controls">
-                        <?php echo $form->dropDownList($model,'status', Product::model()->getStatusData()); ?>
+                        <?php echo $form->dropDownList($model,'status', Object::model()->getStatusData()); ?>
                         <?php echo $form->error($model,'status', array('class' => 'help-inline error'));?>
                     </div>
                 </div>
-                <div class="par control-group">
-                    <?php echo $form->labelEx($model,'catagory', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $form->dropDownList($model,'catagory', Catagory::model()->getData()); ?>
-                        <?php echo $form->error($model,'type', array('class' => 'help-inline error'));?>
-                    </div>
-                </div>
+                
                 <script>
                     $(function(){
                         $("#a_url").click(function(){
@@ -91,7 +107,7 @@
                             $('#image_file').hide();
                             $("#img_url").show();
                             $('#img_file').hide();
-                            $('#Meohay_upload_method').val('url');    
+                            $('#Object_upload_method').val('url');    
                         });
                         $("#a_file").click(function(){
                             $('#a_url').removeClass('selected');    
@@ -100,7 +116,7 @@
                             $('#image_url').hide();
                             $("#img_url").hide();
                             $('#img_file').show();
-                            $('#Meohay_upload_method').val('file');    
+                            $('#Object_upload_method').val('file');    
                         });
                         $("#browse_file").change(function(evt){
                             var files = evt.target.files;
@@ -124,8 +140,8 @@
                             }
                         });      
 
-                        $("#Meohay_image_url").bind('change keyup blur', function(evt){
-                            var method = $('#Meohay_upload_method').val();
+                        $("#Object_image_url").bind('change keyup blur', function(evt){
+                            var method = $('#Object_upload_method').val();
                             var ext = $(this).val().split('.').pop().toLowerCase(); 
                             if(method == 'url' && $.inArray(ext, [ 'jpg', 'gif', 'png' ] >= 0)){
                                 $('#img_file').hide();
@@ -170,8 +186,8 @@
                     <div class="controls">
                         <?php if($this->action->id == 'update'):?>
                             <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" /> 
-                            <img id="img_url" style="height: 60px; width: auto; margin-left: 220px;" src="<?php echo Product::model()->getImageUrl( $model->id , '157');?>"/>
-                            <!--<img style="height: 60px; width: auto;margin-left: 220px;" src="<?php // echo Meohay::model()->getImgUrl($model->id, $model->image.'_small.jpg');?>" />-->
+                            <img id="img_url" style="height: 60px; width: auto; margin-left: 220px;" src="<?php echo Object::model()->getImageUrl( $model->id , '157');?>"/>
+                            <!--<img style="height: 60px; width: auto;margin-left: 220px;" src="<?php // echo Object::model()->getImgUrl($model->id, $model->image.'_small.jpg');?>" />-->
                             <?php else:?> 
                             <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" /> 
                             <img id="img_url" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
@@ -181,16 +197,86 @@
                 <div class="par control-group">
                     <?php echo $form->labelEx($model,'desc', array('class' => 'control-label')); ?>
                     <div class="controls">
-                        <?php echo $form->textArea($model,'desc',array('maxlength'=> 255, 'style' => 'height: 80px;width: 625px;', 'class' => 'input-large')); ?>
+                        <?php echo $form->textArea($model,'desc',array('maxlength'=> 1000, 'style' => 'height: 80px;width: 625px;', 'class' => 'input-large')); ?>
                         <?php echo $form->error($model,'desc', array('class' => 'help-inline error'));?>
                     </div>
-                    <small class="desc">Description should be 130-255 chars <span id="desc_char_count"></span></small>
+                    <small class="desc">Description should be 1000 chars <span id="desc_char_count"></span></small>
+                </div>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'type', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->dropDownList($model,'type', Object::model()->getTypeData()); ?>
+                        <?php echo $form->error($model,'type', array('class' => 'help-inline error'));?>
+                    </div>
+                </div>
+
+                <div class="par control-group date_start">
+                    <?php echo $form->labelEx($model,'date_start', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model,'date_start',array('maxlength'=>255, 'class' => 'input')); ?>
+                        <?php echo $form->error($model,'date_start');?>
+                    </div>
+                </div>
+
+                <div class="par control-group date_end">
+                    <?php echo $form->labelEx($model,'date_end', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model,'date_end',array('maxlength'=>255, 'class' => 'input')); ?>
+                        <?php echo $form->error($model,'date_end');?>
+                    </div>
                 </div>
 
                 <div class="par control-group">
                     <?php echo $form->labelEx($model,'content', array('class' => 'control-label')); ?>
                     <div class="controls">
                         <?php echo $form->textArea($model,'content',array('class'=> 'mce_editor', 'style' => 'height: 300px;')); ?>
+                    </div>
+                </div>
+
+                <h4 class="widgettitle">Thông tin liên hệ</h4>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'province_id', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->dropDownList($model,'province_id', Province::model()->getData(), array('empty'=>'--Tỉnh/Tp--')); ?>
+                        <?php echo $form->textField($model,'province_name',array('maxlength'=>255, 'style'=>'display: none','class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'province_id', array('class' => 'help-inline error'));?>
+                    </div>
+                </div>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'address', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textArea($model,'address',array('maxlength'=> 255, 'style' => 'height: 80px;width: 625px;', 'class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'address', array('class' => 'help-inline error'));?>
+                    </div>
+                    <small class="desc">Address should be 255 chars <span id="desc_char_count"></span></small>
+                </div>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'mobile', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model,'mobile',array('maxlength'=>255, 'class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'mobile', array('class' => 'help-inline error'));?>
+                        <?php echo $form->textField($model,'phone',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Số máy bàn')); ?>
+                    </div>
+                </div>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'email', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model,'email',array('maxlength'=>255, 'class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'email', array('class' => 'help-inline error'));?>
+                    </div>
+                </div>
+
+                <div class="par control-group">
+                    <?php echo $form->labelEx($model,'skyper', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model,'skyper',array('maxlength'=>255, 'class' => 'input-large')); ?>
+                        <?php echo $form->error($model,'skyper', array('class' => 'help-inline error'));?>
+                        <?php echo $form->textField($model,'yahoo',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Nick yahoo')); ?>
                     </div>
                 </div>
 
@@ -202,14 +288,20 @@
         </div>
 </div>
 <script>
+    $("#Object_province_id").on('change', function(){
+        $('#Object_province_name').val($(this).find(":selected").text());
+    });
     //alias
     <?php if($model->isNewRecord):?>
-    $('#Product_name').bind('blur keyup', function() {
-        $('#Product_alias').val($(this).val().toAlias().replaceAll(' ', '-').toLowerCase());
+    $('#Object_title').bind('blur keyup', function() {
+        $('#Object_alias').val($(this).val().toAlias().replaceAll(' ', '-').toLowerCase());
     });
     <?php endif?>
 
-    $("#Product_name").keyup(function(){
+    $("#Object_title").keyup(function(){
         $('#name_char_count').text($(this).val().length);
+    }).keyup();
+    $("#Object_desc").keyup(function(){
+        $('#desc_char_count').text($(this).val().length);
     }).keyup();
 </script>

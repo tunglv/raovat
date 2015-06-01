@@ -9,14 +9,14 @@
             <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
                 <?php if($this->manager->isManager):?>
                 <li class="ui-state-default ui-corner-top <?php if($this->menu_sub_selected == 'create'):?> ui-tabs-selected ui-state-active<?php endif?>">
-                    <a href="<?php echo $this->createUrl('/admin/product/create')?>">Thêm sản phẩm</a></li>
+                    <a href="<?php echo $this->createUrl('/admin/object/create')?>">Thêm sản phẩm</a></li>
                 <li class="ui-state-default ui-corner-top <?php if($this->menu_sub_selected == 'index'):?> ui-tabs-selected ui-state-active<?php endif?>">
-                    <a href="<?php echo $this->createUrl('/admin/product/')?>">Danh sách sản phẩm</a></li>
+                    <a href="<?php echo $this->createUrl('/admin/object/')?>">Danh sách sản phẩm</a></li>
                 <?php endif?>
                 
                 <?php if($this->menu_sub_selected == 'update'):?> 
                 <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
-                    <a href="<?php echo $this->createUrl('/admin/product/update')?>">Cập nhật sản phẩm</a></li>
+                    <a href="<?php echo $this->createUrl('/admin/object/update')?>">Cập nhật sản phẩm</a></li>
                 <?php endif?>
             </ul>
         

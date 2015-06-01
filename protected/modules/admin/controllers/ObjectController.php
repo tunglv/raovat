@@ -1,11 +1,11 @@
 <?php
 
-class ProductController extends AdminController {
+class ObjectController extends AdminController {
 
     public function init() {
         parent::init();
-        $this->layout = '//admin/product/_layout';
-        $this->menu_parent_selected = 'product';
+        $this->layout = '//admin/object/_layout';
+        $this->menu_parent_selected = 'object';
     }
 
     /**
@@ -40,36 +40,36 @@ class ProductController extends AdminController {
      * list of handbook
      */
     public function actionIndex() {
-        $this->menu_child_selected = 'product';
+        $this->menu_child_selected = 'object';
         $this->menu_sub_selected = 'index';
 
-        $model = new Product();
+        $model = new Object();
         $model->unsetAttributes();  // clear any default values
 
         $criteria = new CDbCriteria;
 //            $criteria->order = 't.id ASC';
-        $criteria->with = array(
-            'manager' => array(
-                'select' => 'name'
-            ),
-        );
+//        $criteria->with = array(
+//            'manager' => array(
+//                'select' => 'name'
+//            ),
+//        );
 
-        if ($productFilter = Yii::app()->request->getQuery('Product')) {
-            $model->attributes = $productFilter;
-            if (isset($productFilter['name']) && $productFilter['name'])
-                $criteria->compare('t.name', $productFilter['name']);
-            if (isset($productFilter['id']) && $productFilter['id'])
-                $criteria->compare('t.id', $productFilter['id']);
-            if (isset($productFilter['status']) && $productFilter['status'])
-                $criteria->compare('t.status', $productFilter['status']);
-            if (isset($productFilter['manager_id']) && $productFilter['manager_id'])
-                $criteria->compare('t.manager_id', $productFilter['manager_id']);
-            if (isset($productFilter['catagory']) && $productFilter['catagory'])
-                $criteria->compare('t.catagory', $productFilter['catagory']);
+        if ($objectFilter = Yii::app()->request->getQuery('Object')) {
+            $model->attributes = $objectFilter;
+            if (isset($objectFilter['name']) && $objectFilter['name'])
+                $criteria->compare('t.name', $objectFilter['name']);
+            if (isset($objectFilter['id']) && $objectFilter['id'])
+                $criteria->compare('t.id', $objectFilter['id']);
+            if (isset($objectFilter['status']) && $objectFilter['status'])
+                $criteria->compare('t.status', $objectFilter['status']);
+            if (isset($objectFilter['manager_id']) && $objectFilter['manager_id'])
+                $criteria->compare('t.manager_id', $objectFilter['manager_id']);
+            if (isset($objectFilter['catagory']) && $objectFilter['catagory'])
+                $criteria->compare('t.catagory', $objectFilter['catagory']);
         }
 
 
-        $dataProvider = new CActiveDataProvider('Product', array(
+        $dataProvider = new CActiveDataProvider('Object', array(
                     'criteria' => $criteria,
                     'sort' => array(// CSort
                         'defaultOrder' => 't.id DESC',
@@ -88,24 +88,23 @@ class ProductController extends AdminController {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $this->menu_child_selected = 'product_create';
+        $this->menu_child_selected = 'object_create';
         $this->menu_sub_selected = 'create';
 
-        $model = new Product();
+        $model = new Object();
 
-        $imgConf = Yii::app()->params->product;
+        $imgConf = Yii::app()->params->object;
 
-        if (isset($_POST['Product'])) {
-            Yii::import('ext.MyDateTime');
-            $post = Yii::app()->request->getPost('Product');
+        if (isset($_POST['Object'])) {
+            $post = Yii::app()->request->getPost('Object');
             $model->attributes = $post;
-            $model->manager_id = $this->manager->id;
+//            $model->manager_id = $this->manager->id;
             $model->image = 'default';
-            $model->created = MyDateTime::getCurrentTime();
+            $model->created = time();
             Yii::import('ext.TextParser');
             $model->alias = $model->alias ? $model->alias : $model->name;
             $model->alias = TextParser::toSEOString($model->alias);
-
+            $model->code = Object::model()->getNewSyntax();
 //            var_dump($model->validate());
 //            var_dump($model->getErrors());die;
 
@@ -129,15 +128,38 @@ class ProductController extends AdminController {
                 $img = WideImage::load($source);
 
                 foreach ($imgConf['img'] as $key => $imgInfo) {
-                    $img = $img->resize($imgInfo['width'], $imgInfo['height'], 'outside', 'down');
+                    $img = $img->resize($imgInfo['width'], $imgInfo['height'],  $imgInfo['fix'], 'down');
                     $img = $img->resizeCanvas($imgInfo['width'], $imgInfo['height'], 'center', 'center', null, 'down');
                     $img->saveToFile($path . $key . '.jpg', $imgInfo['quality']);
                 }
 
                 $model->image = '420';
+
+                if (trim($model->content)) {
+                    // add baseUrl to temp images
+                    Yii::import('ext.simple_html_dom');
+                    $html = new simple_html_dom($model->content);
+                    foreach ($html->find('img') as $i => $img) {
+
+                        if (preg_match('{^/upload/temp/object/' . Yii::app()->getSession()->sessionID . '/.+$}', $img->src)) {
+                            $imgName = substr($img->src, strlen("/upload/temp/object/" . Yii::app()->getSession()->sessionID . "/"));
+                            $image = WideImage::load($this->baseUrl . $img->src);
+                            $image->saveToFile($path . $imgName);
+                            $img->src = $this->baseUrl . "/" . $path . $imgName;
+                        }
+                    }
+                    $content = $html->save();
+                    // upload content images
+                    Yii::import('ext.Myext');
+                    $model->content = Myext::saveContentImages($content, $path, array(
+                        'image_x' => $imgConf['img']['body']['width'],
+                        'image_y' => $imgConf['img']['body']['height'],
+                    ));
+                }
+
                 $model->update();
 
-                Yii::app()->user->setFlash('success', "Post {$model->name} was added successful!");
+                Yii::app()->user->setFlash('success', "Post {$model->title} was added successful!");
                 $this->refresh();
             }
         }
@@ -153,22 +175,18 @@ class ProductController extends AdminController {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $this->menu_child_selected = 'product_update';
+        $this->menu_child_selected = 'object_update';
         $this->menu_sub_selected = 'update';
 
-        $model = Product::model()->findByPk($id);
+        $model = Object::model()->findByPk($id);
 
-        $imgConf = Yii::app()->params->product;
+        $imgConf = Yii::app()->params->object;
 
-        if (isset($_POST['Product'])) {
-            Yii::import('ext.MyDateTime');
-            $post = Yii::app()->request->getPost('Product');
-            //             echo "<pre>";print_r($post);echo "</pre>";die;
+        if (isset($_POST['Object'])) {
+            $post = Yii::app()->request->getPost('Object');
             $model->attributes = $post;
+            $model->created = $model->created ? $model->created : time();
 
-            $model->created = $model->created ? $model->created : MyDateTime::getCurrentTime();
-            $model->update = MyDateTime::getCurrentTime();
-            $model->manager_id = $model->manager_id ? $model->manager_id : $this->manager->id;
             if ($model->validate()) {
                 Yii::import('ext.TextParser');
                 $model->alias = $model->alias ? $model->alias : $model->name;
@@ -195,17 +213,39 @@ class ProductController extends AdminController {
                     $img = WideImage::load($source);
 
                     foreach ($imgConf['img'] as $key => $imgInfo) {
-                        $img = $img->resize($imgInfo['width'], $imgInfo['height'], 'outside', 'down');
+                        $img = $img->resize($imgInfo['width'], $imgInfo['height'],  $imgInfo['fix'], 'down');
                         $img = $img->resizeCanvas($imgInfo['width'], $imgInfo['height'], 'center', 'center', null, 'down');
                         $img->saveToFile($path . $key . '.jpg', $imgInfo['quality']);
                     }
 
                     $model->image = '420';
+
+                    if (trim($model->content)) {
+                        // add baseUrl to temp images
+                        Yii::import('ext.simple_html_dom');
+                        $html = new simple_html_dom($model->content);
+                        foreach ($html->find('img') as $i => $img) {
+
+                            if (preg_match('{^/upload/temp/object/' . Yii::app()->getSession()->sessionID . '/.+$}', $img->src)) {
+                                $imgName = substr($img->src, strlen("/upload/temp/object/" . Yii::app()->getSession()->sessionID . "/"));
+                                $image = WideImage::load($this->baseUrl . $img->src);
+                                $image->saveToFile($path . $imgName);
+                                $img->src = $this->baseUrl . "/" . $path . $imgName;
+                            }
+                        }
+                        $content = $html->save();
+                        // upload content images
+                        Yii::import('ext.Myext');
+                        $model->content = Myext::saveContentImages($content, $path, array(
+                            'image_x' => $imgConf['img']['body']['width'],
+                            'image_y' => $imgConf['img']['body']['height'],
+                        ));
+                    }
                 }
 
                 $model->update();
 
-                Yii::app()->user->setFlash('success', "Post {$model->name} was updated successful!");
+                Yii::app()->user->setFlash('success', "Post {$model->title} was updated successful!");
 
                 $this->refresh();
             }
@@ -217,13 +257,13 @@ class ProductController extends AdminController {
     }
 
     public function actionDelete($id) {
-        $product = Product::model()->findByPk($id);
-        $product->status = 'DISABLE';
-        $product->update();
+        $object = Object::model()->findByPk($id);
+        $object->status = 'disable';
+        $object->update();
 
         //TODO delete file in disk
 
-        echo "Xóa sanr phẩm {$product->name} thành công";
+        echo "Xóa sanr phẩm {$object->title} thành công";
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
@@ -236,7 +276,7 @@ class ProductController extends AdminController {
      * @param integer the ID of the model to be loaded
      */
     public function loadModel($id) {
-        $model = Product::model()->findByPk($id);
+        $model = Object::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;

@@ -43,25 +43,35 @@
             'value' => 'CHtml::image($data->getImageUrl($data->id,"157"), "", array("style" => "width: 100px"))',
         ),
         array(
-            'name' => 'name',
+            'name' => 'title',
             'type'      =>  'raw',
-            'value' => '$data->name',
+            'value' => '$data->title',
         ),
         array(
-            'name' => 'manager_id',
+            'name' => 'desc',
             'type'      =>  'raw',
-            'value' => '$data->manager["name"]',
+            'value' => '$data->desc',
         ),
         array(
-            'name' => 'created',
+            'name' => 'type',
             'type'      =>  'raw',
-            'value' => '$data->created'
+            'value' => '$data->typeLabel',
+            'filter' => $model->typeData
         ),
         array(
-            'name' => 'catagory',
+            'name' => 'user_name',
             'type'      =>  'raw',
-            'value' => '$data->catagory0["name"]',
-            'filter' => Catagory::model()->getData()
+            'value' => '$data->user_name',
+        ),
+        array(
+            'name' => 'date_start',
+            'type'      =>  'raw',
+            'value' => 'date("d-m-y H:i:s",$data->date_start)'
+        ),
+        array(
+            'name' => 'date_end',
+            'type'      =>  'raw',
+            'value' => 'date("d-m-y H:i:s",$data->date_end)'
         ),
         array(
             'name' => 'status',

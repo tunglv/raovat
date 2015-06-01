@@ -39,7 +39,7 @@ class GetAllAdClients extends BaseExample {
       if (isset($adClients)) {
         foreach ($adClients as $adClient) {
           $content = array();
-          $mainFormat = 'Ad client for product "%s" with ID "%s" was found.';
+          $mainFormat = 'Ad client for object "%s" with ID "%s" was found.';
           $firstNestedFormat = 'Supports reporting: %s';
           $content[] = sprintf(
               $mainFormat, $adClient['productCode'], $adClient['id']);

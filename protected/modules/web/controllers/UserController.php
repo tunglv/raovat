@@ -27,7 +27,7 @@
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
                     'actions'=>array('logout','update', 'manageEmail', 'managePhone', 'password', 'verifyPhoneAdd', 'ajaxUpdateEmailList', 'ajaxUpdatePhoneList'),
-                    'users'=>array('@'),
+                    'users'=>array('*'),
                 ),
                 array('deny',  // deny all users
                     'users'=>array('*'),
@@ -39,6 +39,10 @@
             parent::init();
         }
 
+        //user post object
+        public function actionPostObject(){
+
+        }
 
         public function actionPage(){ 
             $user = $this->user;

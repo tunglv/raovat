@@ -155,7 +155,7 @@ $mobilePerVendor_userAgents = array(
 			'Mozilla/5.0 (Linux; U; Android 4.0.4; ru-ru; Fly IQ440; Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'			=> array('isMobile' => true, 'isTablet' => false),
 		),
 
-	// @ref: http://www.galapad.net/product.html
+	// @ref: http://www.galapad.net/object.html
 	'Galapad' => array(
 
 		'Mozilla/5.0 (Linux; U; Android 4.1.1; zh-tw; G1 Build/JRO03C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30' => array('isMobile' => true, 'isTablet' => true, 'version' => array('Android' => '4.1.1', 'Webkit' => '534.30', 'Safari' => '4.0', 'Build' => 'JRO03C') ),

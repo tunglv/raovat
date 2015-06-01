@@ -6,7 +6,7 @@ return array(
 //    'username' => 'root',
 //    'password' => '',
 
-    'connectionString' => 'mysql:host=localhost;dbname=show_room',
+    'connectionString' => 'mysql:host=localhost;dbname=ad',
     'username' => 'root',
     'password' => '',
 

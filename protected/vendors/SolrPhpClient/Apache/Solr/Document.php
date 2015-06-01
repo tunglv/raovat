@@ -134,7 +134,7 @@ class Apache_Solr_Document implements IteratorAggregate
 	 * NOTE: the solr XML format allows you to specify boosts
 	 * PER value even though the underlying Lucene implementation
 	 * only allows a boost per field. To remedy this, the final
-	 * field boost value will be the product of all specified boosts
+	 * field boost value will be the object of all specified boosts
 	 * on field values - this is similar to SolrJ's functionality.
 	 *
 	 * <code>

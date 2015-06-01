@@ -138,7 +138,7 @@
      * @opt_param string maxResults Max number of offers to return in this page. Optional. Defaults to 20.
      * @opt_param string advertiserId Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the given advertiser IDs. Only used when under publishers role. Optional.
      * @opt_param string pageToken The value of 'nextPageToken' from the previous page. Optional.
-     * @opt_param string productCategory Caret(^) delimited list of product categories. Filters out all events that do not reference a product in one of the given product categories. Optional.
+     * @opt_param string productCategory Caret(^) delimited list of object categories. Filters out all events that do not reference a object in one of the given object categories. Optional.
      * @opt_param string chargeType Filters out all charge events that are not of the given charge type. Valid values: 'other', 'slotting_fee', 'monthly_minimum', 'tier_bonus', 'credit', 'debit'. Optional.
      * @opt_param string modifyDateMax Filters out all events modified later than given date. Optional. Defaults to 24 hours after modifyDateMin, if modifyDateMin is explicitly set.
      * @opt_param string status Filters out all events that do not have the given status. Valid values: 'active', 'canceled'. Optional.

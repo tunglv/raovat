@@ -52,47 +52,9 @@ class PageController extends WebController {
     public function actionIndex() {
         $this->layout = '//layouts/main';
 
-        $catagory = Catagory::model()->findAll('status = :status', array(':status'=>'ENABLE'));
+//        $product_viewed = $this->_getCookieViewedProduct();
 
-        $array_product = array();
-
-        //list 4 meohay 
-        $criteria = new CDbCriteria();
-
-        $criteria->compare('t.status', 'ENABLE');
-        $criteria->order = 't.created DESC';
-        $criteria->limit = 5;
-        
-        $product = Product::model()->findAll($criteria);
-        
-        foreach ($product as $_product) {
-            $array_product['product'][] = $_product;
-        }
-
-        foreach($catagory as $key => $_catagory){
-            //list 4 meohay Makeup
-            $criteria = new CDbCriteria();
-//            $criteria_makeup -> select='t.id';
-
-            $criteria->compare('t.catagory', $_catagory['id']);
-            $criteria->compare('t.status', 'ENABLE');
-            $criteria->order = 't.created DESC';
-            $criteria->limit = 4;
-
-            $__product = Product::model()->findAll($criteria);
-
-            $array_product[$_catagory['alias']][] = $__product;
-//            foreach ($meohay_makeup as $makeup) {
-//                if(empty($array_limit['makeup_id']) || !in_array($makeup->id, $array_limit['makeup_id'])) $array_meohay['makeup'][] = $makeup->getMeohay();
-//                else continue;
-//            }
-
-//            $array_product[$_catagory['alias']] = array();
-        }
-
-        $product_viewed = $this->_getCookieViewedProduct();
-
-        $this->render('index', array('array_product'=>$array_product, 'viewed_product' => $product_viewed, 'catagory'=>$catagory));
+        $this->render('index', array());
     }
 
     /**

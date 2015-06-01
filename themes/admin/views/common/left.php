@@ -28,13 +28,13 @@
             </li>
             <?php endif?>
             
-            <li class="dropdown <?php if($this->menu_parent_selected == 'product'):?>active<?php endif?>">
-                <a href="<?php echo $this->createUrl('/admin/product')?>">
-                    <span class="icon-fire"></span> Sản phẩm
+            <li class="dropdown <?php if($this->menu_parent_selected == 'object'):?>active<?php endif?>">
+                <a href="<?php echo $this->createUrl('/admin/object')?>">
+                    <span class="icon-fire"></span> Quản trị tin rao vặt
                 </a>
-                <ul class="<?php echo ($this->menu_parent_selected == 'product') ? 'opened':'closed'?>">
-                    <li<?php if($this->menu_child_selected == 'product_create'):?> class="active"<?php endif?>><a href="<?php echo $this->createUrl('/admin/product/create')?>">Thêm sản phẩm</a></li>
-                    <li<?php if($this->menu_child_selected == 'product'):?> class="active"<?php endif?>><a href="<?php echo $this->createUrl('/admin/product')?>">Quản lý sản phẩm</a></li>
+                <ul class="<?php echo ($this->menu_parent_selected == 'object') ? 'opened':'closed'?>">
+                    <li<?php if($this->menu_child_selected == 'object_create'):?> class="active"<?php endif?>><a href="<?php echo $this->createUrl('/admin/object/create')?>">Thêm tin rao vặt</a></li>
+                    <li<?php if($this->menu_child_selected == 'object'):?> class="active"<?php endif?>><a href="<?php echo $this->createUrl('/admin/object')?>">Quản lý tin rao vặt</a></li>
                 </ul>
             </li>
             <li class="dropdown <?php if($this->menu_parent_selected == 'catagory'):?>active<?php endif?>">

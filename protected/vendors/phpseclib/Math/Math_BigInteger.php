@@ -1155,7 +1155,7 @@ class Math_BigInteger {
         // the following for loop could be removed if the for loop following it
         // (the one with nested for loops) initially set $i to 0, but
         // doing so would also make the result in one set of unnecessary adds,
-        // since on the outermost loops first pass, $product->value[$k] is going
+        // since on the outermost loops first pass, $object->value[$k] is going
         // to always be 0
 
         $carry = 0;
@@ -1576,8 +1576,8 @@ class Math_BigInteger {
      *
      *    The two most commonly used modular reductions are Barrett and Montgomery reduction.  Montgomery reduction,
      *    although faster, only works when the gcd of the modulo and of the base being used is 1.  In RSA, when the
-     *    base is a power of two, the modulo - a product of two primes - is always going to have a gcd of 1 (because
-     *    the product of two odd numbers is odd), but what about when RSA isn't used?
+     *    base is a power of two, the modulo - a object of two primes - is always going to have a gcd of 1 (because
+     *    the object of two odd numbers is odd), but what about when RSA isn't used?
      *
      *    In contrast, Barrett reduction has no such constraint.  As such, some bigint implementations perform a
      *    Barrett reduction after every operation in the modpow function.  Others perform Barrett reductions when the
@@ -2111,7 +2111,7 @@ class Math_BigInteger {
     /**
      * Performs long multiplication up to $stop digits
      *
-     * If you're going to be doing array_slice($product->value, 0, $stop), some cycles can be saved.
+     * If you're going to be doing array_slice($object->value, 0, $stop), some cycles can be saved.
      *
      * @see _regularBarrett()
      * @param Array $x_value
@@ -2147,7 +2147,7 @@ class Math_BigInteger {
         // the following for loop could be removed if the for loop following it
         // (the one with nested for loops) initially set $i to 0, but
         // doing so would also make the result in one set of unnecessary adds,
-        // since on the outermost loops first pass, $product->value[$k] is going
+        // since on the outermost loops first pass, $object->value[$k] is going
         // to always be 0
 
         $carry = 0;

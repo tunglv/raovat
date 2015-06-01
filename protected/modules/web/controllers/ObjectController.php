@@ -1,6 +1,6 @@
 <?php
 
-class ProductController extends WebController {
+class ObjectController extends WebController {
 
     public function filters() {
         return array(
@@ -110,7 +110,7 @@ class ProductController extends WebController {
 
         Yii::app()->request->cookies['view_product'] = $cookies;
 
-        $this->render('detail_product',array('product'=>$product, 'viewed_product'=>$viewed_product, 'same_product'=>$same_product));
+        $this->render('detail_product',array('object'=>$product, 'viewed_product'=>$viewed_product, 'same_product'=>$same_product));
     }
 
     /**
