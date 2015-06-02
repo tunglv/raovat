@@ -6,7 +6,7 @@
             $isEmail = preg_match('{@}', $this->username);
 
             if($isEmail) $userEmailPhone = UserEmail::model()->findByAttributes(array('email' => $this->username));
-            else         $userEmailPhone = UserPhone::model()->findByAttributes(array('phone' => $this->username));
+//            else         $userEmailPhone = UserPhone::model()->findByAttributes(array('phone' => $this->username));
 
 
 

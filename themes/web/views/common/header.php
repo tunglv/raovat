@@ -27,8 +27,8 @@
                         <?php endforeach;?>
                     </select>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="display: inline-block">
-                    <button type="submit" class="btn btn-warning"><i class="fa fa-search"></i></button>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="display: inline-block;padding-left: 10px;padding-top: 3px;float: right;">
+                    <button type="submit" class="btn btn-warning" style="padding: 0;border: 0;background-color: transparent;"><i class="fa fa-search" style="background-image: url(https://cdn1.iconfinder.com/data/icons/free-98-icons/32/search-20.png);width: 20px;height: 20px;display: block;"></i></button>
                 </div>
                 <div class="clear"></div>
                 <div class="top-search col-lg-offset-1"></div>

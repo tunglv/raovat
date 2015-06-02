@@ -4,6 +4,7 @@
         margin-right: 0 !important;
     }
 </style>
+<div class="clearfix" style="margin: 50px 0 30px"></div>
 <div class="container clearfix">
     <div class="two-thirds column">
         <!--catagory makeup-->
