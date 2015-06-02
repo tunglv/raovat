@@ -51,25 +51,25 @@ class ObjectController extends WebController {
      */
     public function actionList($alias = null) {
         $this->layout = '//layouts/main';
-        $catagory = Catagory::model()->getCatagoryByAlias($alias);
+//        $catagory = Catagory::model()->getCatagoryByAlias($alias);
+//
+//        $criteria = new CDbCriteria();
+//        $criteria->compare('t.catagory', $catagory->id);
+//        $criteria->compare('t.status', 'ENABLE');
+//        $criteria->order = 't.created DESC';
+//
+//        $dataProvider = new CActiveDataProvider('Product', array(
+//            'criteria'=>$criteria,
+//            'pagination' => array(
+//                'pageSize' => 10,
+//                //'totalItemCount' => 'page',
+//                'pageVar' => 'paged',
+//            ),
+//        ));
 
-        $criteria = new CDbCriteria();
-        $criteria->compare('t.catagory', $catagory->id);
-        $criteria->compare('t.status', 'ENABLE');
-        $criteria->order = 't.created DESC';
+//        $viewed_product = $this->_getCookieViewedProduct();
 
-        $dataProvider = new CActiveDataProvider('Product', array(
-            'criteria'=>$criteria,
-            'pagination' => array(
-                'pageSize' => 10,
-                //'totalItemCount' => 'page',
-                'pageVar' => 'paged',
-            ),
-        ));
-
-        $viewed_product = $this->_getCookieViewedProduct();
-
-        $this->render('list', array('dataProvider'=>$dataProvider, 'viewed_product'=>$viewed_product, 'catagory'=>$catagory));
+        $this->render('list', array());
     }
 
     /**
@@ -81,36 +81,8 @@ class ObjectController extends WebController {
     public function actionDetail($alias = null) {
         $this->layout = '//layouts/main';
 
-            $product = Product::model()->getProductByAlias($alias);
 
-        $this->title = $product['name'];
-        $this->desc = $product['desc'];
-
-        $same_product = $this->_getSameProduct($product['catagory'], $product['id']);
-        $viewed_product = $this->_getCookieViewedProduct();
-
-        $cookies_viewed_product = '';
-
-        if(isset(Yii::app()->request->cookies['view_product'])){
-            $cookies_viewed_product = Yii::app()->request->cookies['view_product']->value;
-
-            if(strpos($cookies_viewed_product, $product['id']) === false){
-
-                if(substr_count($cookies_viewed_product,',') == 4){
-                    $cookies_viewed_product = substr($cookies_viewed_product,0,strrpos($cookies_viewed_product,','));
-                }
-                $cookies_viewed_product = $product['id'].','.$cookies_viewed_product;
-            }
-        } else {
-            $cookies_viewed_product = $product['id'];
-        }
-
-        $cookies = new CHttpCookie('view_product', $cookies_viewed_product);
-        $cookies->expire = time() + 24*60*60;
-
-        Yii::app()->request->cookies['view_product'] = $cookies;
-
-        $this->render('detail_product',array('object'=>$product, 'viewed_product'=>$viewed_product, 'same_product'=>$same_product));
+        $this->render('detail',array());
     }
 
     /**

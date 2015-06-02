@@ -142,7 +142,7 @@ img.pic-2 {
 
 /* header */
 header {
-	min-height:91px;
+    padding: 2px 0;
 	border-top:5px solid #585858;
 }
 
