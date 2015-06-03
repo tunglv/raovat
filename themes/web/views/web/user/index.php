@@ -45,7 +45,7 @@
         </div>
     </div>
     <!--    center box-->
-    <div class="two-thirds column">
+    <div class="two-thirds column" style="box-shadow: 1px 1px 25px #ccc;margin: 0;padding: 0 10px;">
         <div class="feed-course" style="overflow: hidden;font-family: arial, helvetica, sans-serif;color: #000">
             <script type="text/javascript" src="/files/editors/tiny_mce/tiny_mce.js"></script>
             <script type="text/javascript" src="/files/editors/tiny_mce/editor_user_verry_short.js"></script>
