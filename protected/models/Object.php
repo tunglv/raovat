@@ -75,7 +75,7 @@ class Object extends CActiveRecord
 			array('price_type', 'length', 'max'=>3),
 			array('ward_id, district_id, province_id', 'length', 'max'=>5),
 			array('status', 'length', 'max'=>7),
-			array('type', 'length', 'max'=>2),
+			array('type, date_total', 'length', 'max'=>2),
 			array('kind', 'length', 'max'=>1),
 			array('code', 'length', 'max'=>10),
 			array('content', 'safe'),
@@ -90,7 +90,7 @@ class Object extends CActiveRecord
 
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, alias, desc, content, image, price, price_type, ward_id, ward_name, district_id, district_name, province_id, province_name, phone, mobile, email, address, status, created, user_id, user_name, link_web, type, kind, date_start, date_end, code, skyper, yahoo, viewed', 'safe', 'on'=>'search'),
+			array('id, title, alias, desc, content, date_total, image, price, price_type, ward_id, ward_name, district_id, district_name, province_id, province_name, phone, mobile, email, address, status, created, user_id, user_name, link_web, type, kind, date_start, date_end, code, skyper, yahoo, viewed', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -179,6 +179,7 @@ class Object extends CActiveRecord
 			'skyper' => 'Skyper',
 			'yahoo' => 'Yahoo',
 			'viewed' => 'Viewed',
+            'date_total' => 'Date Total'
 		);
 	}
 
@@ -220,6 +221,7 @@ class Object extends CActiveRecord
 		$criteria->compare('kind',$this->kind,true);
 		$criteria->compare('date_start',$this->date_start);
 		$criteria->compare('date_end',$this->date_end);
+		$criteria->compare('date_total',$this->date_total);
 		$criteria->compare('code',$this->code,true);
 		$criteria->compare('skyper',$this->skyper,true);
 		$criteria->compare('yahoo',$this->yahoo,true);
@@ -259,6 +261,9 @@ class Object extends CActiveRecord
             '2' => '3 ngày',
             '3' => '5 ngày',
         );
+    }
+    public function getTimeLabel(){
+        return $this->timeData[$this->date_total];
     }
 
     //1: may tinh-may van phong, 2: bat dong san, 3: oto, 4: dien thoai - sim so, 5: thoi trang - my pham, 6: dien lanh - dien may, 7: dien tu - ky thuat so, 8: du lich - the thao, 9: noi - ngoai that, 10: xe dap - xe may, 11: do dung - me va be, 12: vat lieu - xay dung, 13: dich vu

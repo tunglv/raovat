@@ -189,8 +189,7 @@ class ObjectController extends AdminController {
 
             if ($model->validate()) {
                 Yii::import('ext.TextParser');
-                $model->alias = $model->alias ? $model->alias : $model->name;
-                $model->alias = TextParser::toSEOString($model->alias);
+                $model->alias = TextParser::toSEOString($model->title);
                 $model->setIsNewRecord(FALSE);
 
                 /////// IMAGES ////////

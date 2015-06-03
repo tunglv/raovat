@@ -12,7 +12,7 @@
 
             foreach($keys as $k => $title){
                 if($msg = Yii::app()->user->getFlash($k)){
-                    Yii::app()->clientScript->registerScript('myGrow', "myGrowl('{$msg}');");
+                    Yii::app()->clientScript->registerScript('myGrow', "$.jGrowl('{$msg}');");
                     break;
                 }
 

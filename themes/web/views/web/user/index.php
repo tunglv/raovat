@@ -50,6 +50,8 @@
             <script type="text/javascript" src="/files/editors/tiny_mce/tiny_mce.js"></script>
             <script type="text/javascript" src="/files/editors/tiny_mce/editor_user_verry_short.js"></script>
             <script type="text/javascript" src="/files/js/relCopy.jquery.js"></script>
+            <script type="text/javascript" src="/files/js/jGrowl/jquery.jgrowl.min.js"></script>
+            <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl?>/files/js/jGrowl/jquery.jgrowl.css" type="text/css"/>
             <link rel="stylesheet" media="all" type="text/css" href="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.css" />
             <script type="text/javascript" src="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
             <style>
@@ -88,7 +90,7 @@
             </style>
             <script>
                 $(function(){
-                    $("#Object_date_start, #Object_date_end").datetimepicker({
+                    $("#Object_date_total, #Object_date_end").datetimepicker({
                         'dateFormat':'dd-mm-yy',
                         'timeFormat':'hh:mm TT'
 
@@ -242,10 +244,10 @@
 
             <div class="clearfix"></div>
 
-            <div class="par control-group date_start">
-                <label class="control-label three columns required" style="line-height: 30px;" for="Object_date_start">Thời hạn <span class="required">*</span></label>
+            <div class="par control-group date_total">
+                <label class="control-label three columns required" style="line-height: 30px;" for="Object_date_total">Thời hạn <span class="required">*</span></label>
                 <div class="controls seven columns">
-                    <?php echo $form->dropDownList($model,'date_start', Object::model()->getTimeData(), array('class'=>'four columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                    <?php echo $form->dropDownList($model,'date_total', Object::model()->getTimeData(), array('class'=>'four columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -316,8 +318,8 @@
                 </div>
             </div>
 
-            <p class="stdformbutton">
-                <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-info')); ?>
+            <p class="stdformbutton" style="border-radius: 10px;display: inline-block;float: right;padding: 20px;">
+                <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-info', 'style'=>'cursor: pointer;border: 1px solid #ccc;padding: 5px 15px;box-shadow: 1px 1px 10px #ccc;border-radius: 10px;background: #ffffff; /* Old browsers */background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* IE10+ */background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#f6f6f6",GradientType=0 ); /* IE6-9 */')); ?>
             </p>
             <?php $this->endWidget(); ?>
             </div>

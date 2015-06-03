@@ -48,6 +48,80 @@
         {
             if(!$this->user) $this->redirect('/web/user/login');
             $model = new Object();
+
+            $imgConf = Yii::app()->params->object;
+
+            if (isset($_POST['Object'])) {
+                $post = Yii::app()->request->getPost('Object');
+                $model->attributes = $post;
+//            $model->manager_id = $this->manager->id;
+                $model->image = 'default';
+                $model->created = time();
+                Yii::import('ext.TextParser');
+                $model->alias = $model->alias ? $model->alias : $model->title;
+                $model->alias = TextParser::toSEOString($model->alias);
+                $model->code = Object::model()->getNewSyntax();
+                $model->date_start = time();
+                $model->date_end = time() + 86400*$model->date_total;
+//            var_dump($model->validate());
+//            var_dump($model->getErrors());die;
+
+                if ($model->validate()) {
+                    $model->setIsNewRecord(TRUE);
+                    $model->insert();
+
+                    /////// IMAGES ////////
+                    $path = $imgConf['path'] . "{$model->id}/";
+                    if (!file_exists($path))
+                        mkdir($path, 0777, true);
+
+                    $source = NULL;
+                    if ($post['upload_method'] == 'file') {
+                        $source = 'browse_file';
+                    } else {
+                        $source = $post['image_url'];
+                    }
+
+                    Yii::import('ext.wideimage.lib.WideImage');
+                    $img = WideImage::load($source);
+
+                    foreach ($imgConf['img'] as $key => $imgInfo) {
+                        $img = $img->resize($imgInfo['width'], $imgInfo['height'],  $imgInfo['fix'], 'down');
+                        $img = $img->resizeCanvas($imgInfo['width'], $imgInfo['height'], 'center', 'center', null, 'down');
+                        $img->saveToFile($path . $key . '.jpg', $imgInfo['quality']);
+                    }
+
+                    $model->image = '420';
+
+                    if (trim($model->content)) {
+                        // add baseUrl to temp images
+                        Yii::import('ext.simple_html_dom');
+                        $html = new simple_html_dom($model->content);
+                        foreach ($html->find('img') as $i => $img) {
+
+                            if (preg_match('{^/upload/temp/object/' . Yii::app()->getSession()->sessionID . '/.+$}', $img->src)) {
+                                $imgName = substr($img->src, strlen("/upload/temp/object/" . Yii::app()->getSession()->sessionID . "/"));
+                                $image = WideImage::load($this->baseUrl . $img->src);
+                                $image->saveToFile($path . $imgName);
+                                $img->src = $this->baseUrl . "/" . $path . $imgName;
+                            }
+                        }
+                        $content = $html->save();
+                        // upload content images
+                        Yii::import('ext.Myext');
+                        $model->content = Myext::saveContentImages($content, $path, array(
+                            'image_x' => $imgConf['img']['body']['width'],
+                            'image_y' => $imgConf['img']['body']['height'],
+                        ));
+                    }
+
+                    $model->update();
+
+                    Yii::app()->user->setFlash('success', "Tin {$model->title} của bạn đã được đăng tải!");
+                    $this->refresh();
+                }
+            }
+
             $this->render('index', array('model'=>$model));
         }
 
