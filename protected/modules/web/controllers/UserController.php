@@ -182,7 +182,7 @@
 
             $this->render('update', array(
                 'model' => $model,
-                'district_data' => District::model()->getDataByCity($city_id),
+//                'district_data' => District::model()->getDataByCity($city_id),
             ));  
         }
 
