@@ -252,6 +252,15 @@ class Object extends CActiveRecord
         return $this->kindData[$this->kind];
     }
 
+    //1: Thuong, 2: vip
+    public function getTimeData() {
+        return array(
+            '1' => '1 ngày',
+            '2' => '3 ngày',
+            '3' => '5 ngày',
+        );
+    }
+
     //1: may tinh-may van phong, 2: bat dong san, 3: oto, 4: dien thoai - sim so, 5: thoi trang - my pham, 6: dien lanh - dien may, 7: dien tu - ky thuat so, 8: du lich - the thao, 9: noi - ngoai that, 10: xe dap - xe may, 11: do dung - me va be, 12: vat lieu - xay dung, 13: dich vu
     public function getTypeData() {
         return array(

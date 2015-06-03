@@ -101,12 +101,14 @@
 	margin-bottom:19px;
 }
 
-.error {
+.errorMessage {
 	background-image: url(../images/icons/error.png);
-	background-position: 5% 50%;
+	background-position: left center;
 	background-repeat: no-repeat;
 	background-color: #fff1f2;
 	color: #c98f92;
+    padding: 5px 0 5px 28px;
+    clear: both;
 }
 
 .success {

@@ -46,298 +46,298 @@
     </div>
     <!--    center box-->
     <div class="two-thirds column">
-        <div class="feed-course" style="overflow: hidden;border: 1px solid #ececec;">
-        <script type="text/javascript" src="/files/editors/tiny_mce/tiny_mce.js"></script>
-        <script type="text/javascript" src="/files/editors/tiny_mce/editor_admin.js"></script>
-        <script type="text/javascript" src="/files/js/relCopy.jquery.js"></script>
-        <link rel="stylesheet" media="all" type="text/css" href="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.css" />
-        <script type="text/javascript" src="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
-        <style>
-            .checkbocklist {
-                width:100px;
-                float:left;
-                overflow:hidden;
-            }
-            .checkbocklist label{
-                width: 50px;
-            }
-            label.required {
-                float:left;
-            }
-            .ui-datepicker {
-                width: 232px;
-            }
-            .upload_method{
-                cursor: pointer;
-            }
-            .upload_method.selected{
-                text-decoration: underline;
-                font-weight: bold;
-            }
-            #img_file {
-                margin-top: 5px;
-            }
-            #image_file, #image_url, #img_file, #img_url{
-                margin-left: 220px;
-            }
-            #image_file, #image_url{
-                display: none;
-            }
+        <div class="feed-course" style="overflow: hidden;font-family: arial, helvetica, sans-serif;color: #000">
+            <script type="text/javascript" src="/files/editors/tiny_mce/tiny_mce.js"></script>
+            <script type="text/javascript" src="/files/editors/tiny_mce/editor_user_verry_short.js"></script>
+            <script type="text/javascript" src="/files/js/relCopy.jquery.js"></script>
+            <link rel="stylesheet" media="all" type="text/css" href="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.css" />
+            <script type="text/javascript" src="/files/js/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
+            <style>
+                .checkbocklist {
+                    width:100px;
+                    float:left;
+                    overflow:hidden;
+                }
+                .checkbocklist label{
+                    width: 50px;
+                }
+                label.required {
+                    float:left;
+                }
+                .ui-datepicker {
+                    width: 232px;
+                }
+                .upload_method{
+                    cursor: pointer;
+                }
+                .upload_method.selected{
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+                #img_file {
+                    margin-top: 5px;
+                }
+                #image_file, #image_url{
+                    display: none;
+                }
+                .par.control-group {
+                    padding: 20px 0;
+                    display: block;
+                }
 
-        </style>
-        <script>
-            $(function(){
-                $("#Object_date_start, #Object_date_end").datetimepicker({
-                    'dateFormat':'dd-mm-yy',
-                    'timeFormat':'hh:mm TT'
+            </style>
+            <script>
+                $(function(){
+                    $("#Object_date_start, #Object_date_end").datetimepicker({
+                        'dateFormat':'dd-mm-yy',
+                        'timeFormat':'hh:mm TT'
 
+                    });
                 });
-            });
-        </script>
-        <div class="grid_4">
-        <div class="da-panel">
-        <div class="da-panel-header">
-            <span class="da-panel-title">
-                Rao vặt
-            </span>
-        </div>
+            </script>
+            <div class="grid_4">
+            <div class="da-panel">
 
-        <div id="da-ex-tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-        <div style="padding-bottom: 20px;">
+            <div id="da-ex-tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <div style="padding-bottom: 20px;">
 
-        <?php $this->widget('admin.components.widgets.AlertWidget');?>
+            <?php $this->widget('admin.components.widgets.AlertWidget');?>
 
-        <?php $form=$this->beginWidget('CActiveForm', array(
-            'id'=>'object-form',
-            'enableClientValidation'=>true,
-            'clientOptions'=>array(
-                'validateOnSubmit'=>true,
-            ),
-            //'enableAjaxValidation'=>true,
-            'htmlOptions' => array('class' => 'stdform', 'enctype' => 'multipart/form-data')
-        )); ?>
-        <h4 class="widgettitle">Nội dung tin rao vặt</h4>
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'title', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'title',array('maxlength'=>255, 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'title', array('class' => 'help-inline error'));?>
-                <?php echo $form->textField($model,'alias',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Url Post Name')); ?>
+            <?php $form=$this->beginWidget('CActiveForm', array(
+                'id'=>'object-form',
+                'enableClientValidation'=>true,
+                'clientOptions'=>array(
+                    'validateOnSubmit'=>true,
+                ),
+                //'enableAjaxValidation'=>true,
+                'htmlOptions' => array('class' => 'stdform', 'enctype' => 'multipart/form-data')
+            )); ?>
+            <h2 class="title"><a href="">Nội dung tin rao vặt</a><span class="line"></span></h2>
+            <div class="par control-group">
+                <label class="control-label three columns required" style="line-height: 24px;" for="Object_title">Tiêu đề <span class="required">*</span></label>
+                <div class="controls seven columns">
+                    <?php echo $form->textField($model,'title',array('maxlength'=>255, 'class' => 'seven columns', 'style'=>'padding: 6px;border-radius: 15px;border: 1px solid #ccc;')); ?>
+                    <?php echo $form->error($model,'title');?>
+                    <?php echo $form->textField($model,'alias',array('maxlength'=>255, 'style'=>'display: none;', 'class' => 'input-large', 'placeholder' => 'Url Post Name')); ?>
+                </div>
+                <small class="desc" style="float: right;padding-right: 16px;padding-top: 5px;">Name should be 255 chars <span id="name_char_count"></span></small>
             </div>
-            <small class="desc">Name should be 255 chars <span id="name_char_count"></span></small>
-        </div>
 
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'status', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->dropDownList($model,'status', Object::model()->getStatusData()); ?>
-                <?php echo $form->error($model,'status', array('class' => 'help-inline error'));?>
-            </div>
-        </div>
+            <script>
+                $(function(){
+                    $("#a_url").click(function(){
+                        $('#a_file').removeClass('selected');
+                        $('#a_url').addClass('selected');
+                        $('#image_url').show();
+                        $('#image_file').hide();
+                        $("#img_url").show();
+                        $('#img_file').hide();
+                        $('#Object_upload_method').val('url');
+                    });
+                    $("#a_file").click(function(){
+                        $('#a_url').removeClass('selected');
+                        $('#a_file').addClass('selected');
+                        $('#image_file').show();
+                        $('#image_url').hide();
+                        $("#img_url").hide();
+                        $('#img_file').show();
+                        $('#Object_upload_method').val('file');
+                    });
+                    $("#browse_file").change(function(evt){
+                        var files = evt.target.files;
+                        var f = files[0];
 
-        <script>
-            $(function(){
-                $("#a_url").click(function(){
-                    $('#a_file').removeClass('selected');
-                    $('#a_url').addClass('selected');
-                    $('#image_url').show();
-                    $('#image_file').hide();
-                    $("#img_url").show();
-                    $('#img_file').hide();
-                    $('#Object_upload_method').val('url');
-                });
-                $("#a_file").click(function(){
-                    $('#a_url').removeClass('selected');
-                    $('#a_file').addClass('selected');
+                        if(!f.type.match('image.*')) {
+                            alert('File không hợp lệ. Hãy chọn 1 file ảnh khác.');
+                            return false;
+                        }
+                        var i = document.createElement('input');
+                        if('multiple' in i){
+                            var reader = new FileReader();
+                            reader.readAsDataURL(f);
+                            reader.onload = (function(){
+                                return function(e){
+                                    $('#img_url').hide();
+                                    $('#img_file').attr('src', e.target.result).show();
+                                };
+                            })(f);
+                            $('#img_review').show();
+                        }
+                    });
+
+                    $("#Object_image_url").bind('change keyup blur', function(evt){
+                        var method = $('#Object_upload_method').val();
+                        var ext = $(this).val().split('.').pop().toLowerCase();
+                        if(method == 'url' && $.inArray(ext, [ 'jpg', 'gif', 'png' ] >= 0)){
+                            $('#img_file').hide();
+                            $('#img_url').attr('src', $(this).val()).show();
+                            $('#img_review').show();
+                        }
+                    });
+
+                    <?php if($model->upload_method == 'file'):?>
                     $('#image_file').show();
                     $('#image_url').hide();
-                    $("#img_url").hide();
-                    $('#img_file').show();
-                    $('#Object_upload_method').val('file');
+                    $('#a_file').addClass('selected');
+                    <?php else:?>
+                    $('#image_url').show();
+                    $('#image_file').hide();
+                    $('#a_url').addClass('selected');
+                    <?php if($model->image_url):?>
+                    $('#img_url').attr('src', '<?php echo $model->image_url?>').show();
+                    <?php endif?>
+                    <?php endif?>
                 });
-                $("#browse_file").change(function(evt){
-                    var files = evt.target.files;
-                    var f = files[0];
+            </script>
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="seven columns">Ảnh đại diện <span class="required">*</span> </label>
+                <div class="clearfix"></div>
+                <div class="controls">
+                    <div style="float: left;line-height: 24px;" class="three columns">
+                        <a id="a_file" class="upload_method">Từ máy tính</a> &nbsp;|&nbsp;
+                        <a id="a_url" class="upload_method">Từ URL</a>
+                        <?php echo $form->hiddenField($model,'upload_method'); ?>
+                    </div>
 
-                    if(!f.type.match('image.*')) {
-                        alert('File không hợp lệ. Hãy chọn 1 file ảnh khác.');
-                        return false;
-                    }
-                    var i = document.createElement('input');
-                    if('multiple' in i){
-                        var reader = new FileReader();
-                        reader.readAsDataURL(f);
-                        reader.onload = (function(){
-                            return function(e){
-                                $('#img_url').hide();
-                                $('#img_file').attr('src', e.target.result).show();
-                            };
-                        })(f);
-                        $('#img_review').show();
-                    }
+                    <div id="image_file" class="seven columns">
+                        <?php echo $form->fileField($model,'image_file', array('class' => 'da-custom-file seven columns', 'name' => 'browse_file')); ?>
+                    </div>
+                    <div id="image_url" class="seven columns">
+                        <?php echo $form->textField($model,'image_url', array('class' => 'seven columns', 'placeholder' => 'http://domain.com/path/image.jpg', 'style'=>'padding: 6px;border-radius: 15px;border: 1px solid #ccc;')); ?>
+                    </div>
+                    <?php echo $form->error($model,'image_file');?>
+                    <?php echo $form->error($model,'upload_method');?>
+                </div>
+                <div class="controls">
+                    <?php if($this->action->id == 'update'):?>
+                        <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
+                        <img id="img_url" style="height: 60px; width: auto; margin-left: 220px;" src="<?php echo Object::model()->getImageUrl( $model->id , '157');?>"/>
+                        <!--<img style="height: 60px; width: auto;margin-left: 220px;" src="<?php // echo Object::model()->getImgUrl($model->id, $model->image.'_small.jpg');?>" />-->
+                    <?php else:?>
+                        <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
+                        <img id="img_url" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
+                    <?php endif?>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns required" for="Object_desc">Mô tả ngắn <span class="required">*</span></label>
+                <div class="controls seven columns">
+                    <?php echo $form->textArea($model,'desc',array('maxlength'=> 1000, 'style' => 'height: 60px;width: 98%;border-radius: 10px;', 'class' => 'seven columns')); ?>
+                    <?php echo $form->error($model,'desc');?>
+                </div>
+                <small class="desc" style="float: right;padding-right: 10px;padding-top: 5px;">Description should be 1000 chars <span id="desc_char_count"></span></small>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="par control-group">
+                <label class="control-label three columns" style="line-height: 30px;" for="Object_type">Loại tin đăng</label>
+                <div class="controls seven columns">
+                    <?php echo $form->dropDownList($model,'type', Object::model()->getTypeData(), array('class'=>'four columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                    <?php echo $form->error($model,'type');?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="par control-group date_start">
+                <label class="control-label three columns required" style="line-height: 30px;" for="Object_date_start">Thời hạn <span class="required">*</span></label>
+                <div class="controls seven columns">
+                    <?php echo $form->dropDownList($model,'date_start', Object::model()->getTimeData(), array('class'=>'four columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label seven columns" for="Object_content">Nội dung</label>
+                <div class="controls" style="padding-left: 10px;">
+                    <?php echo $form->textArea($model,'content',array('class'=> 'mce_editor ten columns', 'editorTemplate'=>'null', 'style' => 'height: 300px;width: 100%;')); ?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <h2 class="title"><a href="">Thông tin liên hệ</a><span class="line"></span></h2>
+
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns" for="Object_province_id" style="line-height: 24px">Tỉnh/ TP</label>
+                <div class="controls seven columns">
+                    <?php echo $form->dropDownList($model,'province_id', Province::model()->getData(), array('empty'=>'--Tỉnh/Tp--', 'class'=>'four columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                    <?php echo $form->textField($model,'province_name',array('maxlength'=>255, 'style'=>'display: none','class' => 'input-large')); ?>
+                    <?php echo $form->error($model,'province_id');?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns" for="Object_address">Địa chỉ</label>
+                <div class="controls seven columns">
+                    <?php echo $form->textArea($model,'address',array('maxlength'=> 255, 'style' => 'min-height: 80px;width: 100%;padding: 6px;border-radius: 15px;border: 1px solid #ccc;', 'class' => 'seven columns')); ?>
+                    <?php echo $form->error($model,'address');?>
+                </div>
+                <small class="desc" style="float: right;padding-right: 10px;padding-top: 5px;">Address should be 255 chars <span id="desc_char_count"></span></small>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns required" for="Object_mobile" style="line-height: 24px">Di động/ Máy bàn <span class="required">*</span></label>
+                <div class="controls seven columns">
+                    <?php echo $form->textField($model,'mobile',array('maxlength'=>255, 'class' => 'three columns', 'style'=>'padding: 6px;border: 1px solid #ccc;border-radius: 15px;', 'placeholder' => 'Số di động')); ?>
+                    <?php echo $form->textField($model,'phone',array('maxlength'=>255, 'class' => 'three columns', 'placeholder' => 'Số máy bàn', 'style' => 'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                    <?php echo $form->error($model,'mobile');?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns" for="Object_email" style="line-height: 24px;">Email</label>
+                <div class="controls seven columns">
+                    <?php echo $form->textField($model,'email',array('maxlength'=>255, 'class' => 'three columns', 'style' => 'padding: 6px;border: 1px solid #ccc;border-radius: 15px;')); ?>
+                    <?php echo $form->error($model,'email');?>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns" for="Object_skyper" style="line-height: 24px">Nick skyper/ yahoo</label>
+                <div class="controls seven columns">
+                    <?php echo $form->textField($model,'skyper',array('maxlength'=>255, 'class' => 'three columns', 'style' => 'padding: 6px;border: 1px solid #ccc;border-radius: 15px;', 'placeholder' => 'Nick skyper')); ?>
+                    <?php echo $form->textField($model,'yahoo',array('maxlength'=>255, 'class' => 'three columns', 'style' => 'padding: 6px;border: 1px solid #ccc;border-radius: 15px;', 'placeholder' => 'Nick yahoo')); ?>
+                    <?php echo $form->error($model,'skyper');?>
+                </div>
+            </div>
+
+            <div class="par control-group">
+                <label class="control-label three columns required" style="line-height: 24px;" for="Object_title">Link website <span class="required">*</span></label>
+                <div class="controls seven columns">
+                    <?php echo $form->textField($model,'link_web',array('maxlength'=>255, 'class' => 'seven columns', 'style'=>'padding: 6px;border-radius: 15px;border: 1px solid #ccc;')); ?>
+                    <?php echo $form->error($model,'link_web');?>
+                </div>
+            </div>
+
+            <p class="stdformbutton">
+                <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-info')); ?>
+            </p>
+            <?php $this->endWidget(); ?>
+            </div>
+            </div>
+            </div>
+            <script>
+                $("#Object_province_id").on('change', function(){
+                    $('#Object_province_name').val($(this).find(":selected").text());
                 });
+                //alias
 
-                $("#Object_image_url").bind('change keyup blur', function(evt){
-                    var method = $('#Object_upload_method').val();
-                    var ext = $(this).val().split('.').pop().toLowerCase();
-                    if(method == 'url' && $.inArray(ext, [ 'jpg', 'gif', 'png' ] >= 0)){
-                        $('#img_file').hide();
-                        $('#img_url').attr('src', $(this).val()).show();
-                        $('#img_review').show();
-                    }
-                });
+                $("#Object_title").keyup(function(){
+                    $('#name_char_count').text($(this).val().length);
+                }).keyup();
+                $("#Object_desc").keyup(function(){
+                    $('#desc_char_count').text($(this).val().length);
+                }).keyup();
+            </script>
 
-                <?php if($model->upload_method == 'file'):?>
-                $('#image_file').show();
-                $('#image_url').hide();
-                $('#a_file').addClass('selected');
-                <?php else:?>
-                $('#image_url').show();
-                $('#image_file').hide();
-                $('#a_url').addClass('selected');
-                <?php if($model->image_url):?>
-                $('#img_url').attr('src', '<?php echo $model->image_url?>').show();
-                <?php endif?>
-                <?php endif?>
-            });
-        </script>
-        <div class="par control-group">
-            <label>Cover Image <span class="required">*</span> </label>
-            <div class="controls">
-                <div style="float: left;">
-                    <a id="a_file" class="upload_method">Từ máy tính</a> &nbsp;|&nbsp;
-                    <a id="a_url" class="upload_method">Từ URL</a>
-                    <?php echo $form->hiddenField($model,'upload_method'); ?>
-                </div>
-                <div style="clear: both;"></div>
-
-                <div id="image_file">
-                    <?php echo $form->fileField($model,'image_file', array('class' => 'da-custom-file', 'name' => 'browse_file')); ?>
-                </div>
-                <div id="image_url">
-                    <?php echo $form->textField($model,'image_url', array('placeholder' => 'http://domain.com/path/image.jpg')); ?>
-                </div>
-                <?php echo $form->error($model,'image_file');?>
-                <?php echo $form->error($model,'upload_method');?>
             </div>
-            <div class="controls">
-                <?php if($this->action->id == 'update'):?>
-                    <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
-                    <img id="img_url" style="height: 60px; width: auto; margin-left: 220px;" src="<?php echo Object::model()->getImageUrl( $model->id , '157');?>"/>
-                    <!--<img style="height: 60px; width: auto;margin-left: 220px;" src="<?php // echo Object::model()->getImgUrl($model->id, $model->image.'_small.jpg');?>" />-->
-                <?php else:?>
-                    <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
-                    <img id="img_url" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
-                <?php endif?>
-            </div>
-        </div>
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'desc', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textArea($model,'desc',array('maxlength'=> 1000, 'style' => 'height: 80px;width: 625px;', 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'desc', array('class' => 'help-inline error'));?>
-            </div>
-            <small class="desc">Description should be 1000 chars <span id="desc_char_count"></span></small>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'type', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->dropDownList($model,'type', Object::model()->getTypeData()); ?>
-                <?php echo $form->error($model,'type', array('class' => 'help-inline error'));?>
-            </div>
-        </div>
-
-        <div class="par control-group date_start">
-            <?php echo $form->labelEx($model,'date_start', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'date_start',array('maxlength'=>255, 'class' => 'input')); ?>
-                <?php echo $form->error($model,'date_start');?>
-            </div>
-        </div>
-
-        <div class="par control-group date_end">
-            <?php echo $form->labelEx($model,'date_end', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'date_end',array('maxlength'=>255, 'class' => 'input')); ?>
-                <?php echo $form->error($model,'date_end');?>
-            </div>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'content', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textArea($model,'content',array('class'=> 'mce_editor', 'style' => 'height: 300px;')); ?>
-            </div>
-        </div>
-
-        <h4 class="widgettitle">Thông tin liên hệ</h4>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'province_id', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->dropDownList($model,'province_id', Province::model()->getData(), array('empty'=>'--Tỉnh/Tp--')); ?>
-                <?php echo $form->textField($model,'province_name',array('maxlength'=>255, 'style'=>'display: none','class' => 'input-large')); ?>
-                <?php echo $form->error($model,'province_id', array('class' => 'help-inline error'));?>
-            </div>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'address', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textArea($model,'address',array('maxlength'=> 255, 'style' => 'height: 80px;width: 625px;', 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'address', array('class' => 'help-inline error'));?>
-            </div>
-            <small class="desc">Address should be 255 chars <span id="desc_char_count"></span></small>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'mobile', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'mobile',array('maxlength'=>255, 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'mobile', array('class' => 'help-inline error'));?>
-                <?php echo $form->textField($model,'phone',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Số máy bàn')); ?>
-            </div>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'email', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'email',array('maxlength'=>255, 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'email', array('class' => 'help-inline error'));?>
-            </div>
-        </div>
-
-        <div class="par control-group">
-            <?php echo $form->labelEx($model,'skyper', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model,'skyper',array('maxlength'=>255, 'class' => 'input-large')); ?>
-                <?php echo $form->error($model,'skyper', array('class' => 'help-inline error'));?>
-                <?php echo $form->textField($model,'yahoo',array('maxlength'=>255, 'class' => 'input-large', 'placeholder' => 'Nick yahoo')); ?>
-            </div>
-        </div>
-
-        <p class="stdformbutton">
-            <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-info')); ?>
-        </p>
-        <?php $this->endWidget(); ?>
-        </div>
-        </div>
-        </div>
-        <script>
-            $("#Object_province_id").on('change', function(){
-                $('#Object_province_name').val($(this).find(":selected").text());
-            });
-            //alias
-
-            $("#Object_title").keyup(function(){
-                $('#name_char_count').text($(this).val().length);
-            }).keyup();
-            $("#Object_desc").keyup(function(){
-                $('#desc_char_count').text($(this).val().length);
-            }).keyup();
-        </script>
-
         </div>
     </div>
 </div>
