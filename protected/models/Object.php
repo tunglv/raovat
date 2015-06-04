@@ -41,6 +41,7 @@ class Object extends CActiveRecord
     public $upload_method = 'url';
     public $image_file;
     public $image_url;
+    public $verifyCode;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -88,6 +89,9 @@ class Object extends CActiveRecord
             array('image_url', 'url', 'allowEmpty' => true),
             array('upload_method', 'checkUpload'),
 
+            array('verifyCode', 'required'),
+            array('verifyCode', 'CaptchaExtendedValidator', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, alias, desc, content, date_total, image, price, price_type, ward_id, ward_name, district_id, district_name, province_id, province_name, phone, mobile, email, address, status, created, user_id, user_name, link_web, type, kind, date_start, date_end, code, skyper, yahoo, viewed', 'safe', 'on'=>'search'),
@@ -109,7 +113,7 @@ class Object extends CActiveRecord
 
     public function checkUpload($attribute, $params)
     {
-        if(Yii::app()->controller->action->id == 'update') return true;
+        if(Yii::app()->controller->action->id == 'update' || Yii::app()->controller->action->id == 'updateObject') return true;
 
         $post = $_POST['Object'];
 

@@ -25,25 +25,7 @@
 <div class="clearfix" style="margin: 60px 0 30px"></div>
 <div class="container clearfix">
     <!--    left box-->
-    <div class="one-third column">
-        <div class="left-box">
-            <!--            <h2 class="title"><a href="">Tài liệu </a><span class="line"></span></h2>-->
-            <div style="display: inline-block;margin-bottom: 15px;">
-                <a style="float: left;display: inline-block;height: 48px;width: 48px;overflow: hidden;border-radius: 25px;"><img src="http://playenglish.tung/upload/user_image/100022/avatar/avatar_65.jpg?556d6e76b32c8"></a>
-                <div id="your-profile" style="display: inline-block;line-height: 20px;font-size: 12px;padding-left: 10px;">
-                    <a style="display: block;color: #00aec8;cursor: pointer;">Tung le Van</a>
-                    <a style="display: block;color: #9197a3;cursor: pointer" href="/tai-khoan/cap-nhap-tai-khoan">Edit Profile</a>                </div>
-            </div>
-        </div>
-        <div class="left-box" style="margin-top: 20px;">
-            <h2 class="title"><a href="">Các tin đã đăng</a><span class="line"></span></h2>
-            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;"><div id="list-homework" style="height: 250px; overflow: hidden; width: auto;">
-                    <span class="field-left-box" style="display: block;clear: both;margin: 0;border-top: none;padding-top: 0;"><i class="icon-document" style="margin-right: 5px;height: 28px;width: 28px;display: inline-block;float: left;background-size: 100%;background-image: url(/themes/web/files/images/icons/pen-32.png)"></i><a style="font-size: 13px;" href="/upload/homework/4/Tuan 1 - Phat am - Le Van Tung .jpg">Tuan 1 - Phat am - Le Van Tung .jpg</a></span>
-                    <span class="field-left-box" style="display: block;clear: both;"><i class="icon-document" style="margin-right: 5px;height: 28px;width: 28px;display: inline-block;float: left;background-size: 100%;background-image: url(/themes/web/files/images/icons/pen-32.png)"></i><a style="font-size: 13px;" href="/upload/homework/5/Tuan 2 - Phat am - Le Van Tung .jpg">Tuan 2 - Phat am - Le Van Tung .jpg</a></span>
-                    <span class="field-left-box" style="display: block;clear: both;"><i class="icon-document" style="margin-right: 5px;height: 28px;width: 28px;display: inline-block;float: left;background-size: 100%;background-image: url(/themes/web/files/images/icons/pen-32.png)"></i><a style="font-size: 13px;" href="/upload/homework/6/Tuan 3 - Phat am - Le Van Tung.jpg">Tuan 3 - Phat am - Le Van Tung.jpg</a></span>
-                </div><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 250px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
-        </div>
-    </div>
+    <?php $this->renderPartial('_right',array('object'=>$object)); ?>
     <!--    center box-->
     <div class="two-thirds column" style="box-shadow: 1px 1px 25px #ccc;margin: 0;padding: 0 10px;">
         <div class="feed-course" style="overflow: hidden;font-family: arial, helvetica, sans-serif;color: #000">
@@ -211,8 +193,8 @@
                     <?php echo $form->error($model,'image_file');?>
                     <?php echo $form->error($model,'upload_method');?>
                 </div>
-                <div class="controls">
-                    <?php if($this->action->id == 'update'):?>
+                <div class="controls" style="display: block;clear: both;padding-top: 10px;">
+                    <?php if($this->action->id == 'updateObject'):?>
                         <img id="img_file" style="display: none; height: 60px; width: auto; margin-left: 220px;" />
                         <img id="img_url" style="height: 60px; width: auto; margin-left: 220px;" src="<?php echo Object::model()->getImageUrl( $model->id , '157');?>"/>
                         <!--<img style="height: 60px; width: auto;margin-left: 220px;" src="<?php // echo Object::model()->getImgUrl($model->id, $model->image.'_small.jpg');?>" />-->
@@ -309,12 +291,21 @@
                     <?php echo $form->error($model,'skyper');?>
                 </div>
             </div>
-
+            <div class="clearfix"></div>
             <div class="par control-group">
                 <label class="control-label three columns required" style="line-height: 24px;" for="Object_title">Link website <span class="required">*</span></label>
                 <div class="controls seven columns">
                     <?php echo $form->textField($model,'link_web',array('maxlength'=>255, 'class' => 'seven columns', 'style'=>'padding: 6px;border-radius: 15px;border: 1px solid #ccc;')); ?>
                     <?php echo $form->error($model,'link_web');?>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="par control-group">
+                <label class="control-label three columns">Mã xác nhận <span class="required">*</span></label>
+                <div class="controls seven columns" style="position: relative;">
+                    <?php echo $form -> textField($model, 'verifyCode', array('class' => 'two columns text','style'=>'padding: 6px;border-radius: 15px;border: 1px solid #ccc;')); ?>
+                    <?php $this -> widget('CCaptcha', Yii::app() -> params['captcha_view']); ?>
+                    <?php echo $form -> error($model, 'verifyCode'); ?>
                 </div>
             </div>
 

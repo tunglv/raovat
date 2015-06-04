@@ -280,6 +280,15 @@
                     </div>
                 </div>
 
+                <div class="par control-group">
+                    <label class="control-label">Mã xác nhận <span class="required">*</span></label>
+                    <div class="controls" style="position: relative;">
+                        <?php echo $form -> textField($model, 'verifyCode', array('class' => 'text')); ?>
+                        <?php $this -> widget('CCaptcha', Yii::app() -> params['captcha_view']); ?>
+                        <?php echo $form -> error($model, 'verifyCode'); ?>
+                    </div>
+                </div>
+
                 <p class="stdformbutton">
                     <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-info')); ?>
                 </p>

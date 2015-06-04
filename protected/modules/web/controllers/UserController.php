@@ -26,7 +26,7 @@
                     'users'=>array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                    'actions'=>array('logout','update', 'manageEmail', 'managePhone', 'password', 'verifyPhoneAdd', 'ajaxUpdateEmailList', 'ajaxUpdatePhoneList'),
+                    'actions'=>array('logout','update', 'updateObject', 'manageEmail', 'managePhone', 'password', 'verifyPhoneAdd', 'ajaxUpdateEmailList', 'ajaxUpdatePhoneList'),
                     'users'=>array('*'),
                 ),
                 array('deny',  // deny all users
@@ -37,11 +37,6 @@
 
         public function init(){
             parent::init();
-        }
-
-        //user post object
-        public function actionPostObject(){
-
         }
 
         public function actionIndex($user_name = null, $id = null)
@@ -58,11 +53,12 @@
                 $model->image = 'default';
                 $model->created = time();
                 Yii::import('ext.TextParser');
-                $model->alias = $model->alias ? $model->alias : $model->title;
-                $model->alias = TextParser::toSEOString($model->alias);
+                $model->alias = TextParser::toSEOString($model->title);
                 $model->code = Object::model()->getNewSyntax();
                 $model->date_start = time();
                 $model->date_end = time() + 86400*$model->date_total;
+                $model->user_id = $this->user->id;
+                $model->user_name = $this->user->name;
 //            var_dump($model->validate());
 //            var_dump($model->getErrors());die;
 
@@ -122,7 +118,89 @@
                 }
             }
 
-            $this->render('index', array('model'=>$model));
+            $object = $this->_getObjet($this->user->id);
+
+            $this->render('index', array('model'=>$model, 'object' => $object));
+        }
+
+        public function actionUpdateObject($object_id = null, $object_alias = ''){
+            if(!$this->user) $this->redirect('/web/user/login');
+            if(!$object_id) throw new CHttpException(404, 'The requested page does not exist.');
+            $model = Object::model()->findByPk($object_id);
+
+            $imgConf = Yii::app()->params->object;
+
+            if (isset($_POST['Object'])) {
+                $post = Yii::app()->request->getPost('Object');
+                $model->attributes = $post;
+                $model->created = time();
+                Yii::import('ext.TextParser');
+                $model->alias = TextParser::toSEOString($model->title);
+//            var_dump($model->validate());
+//            var_dump($model->getErrors());die;
+
+                if ($model->validate()) {
+                    $model->setIsNewRecord(TRUE);
+
+                    /////// IMAGES ////////
+                    $path = $imgConf['path'] . "{$model->id}/";
+                    if (!file_exists($path))
+                        mkdir($path, 0777, true);
+
+                    if (
+                        ($post['upload_method'] == 'file' && $_FILES['browse_file']['size']) ||
+                        ($post['upload_method'] == 'url' && $post['image_url'])
+                    ) {
+                        $source = NULL;
+                        if ($post['upload_method'] == 'file') {
+                            $source = 'browse_file';
+                        } else {
+                            $source = $post['image_url'];
+                        }
+
+                        Yii::import('ext.wideimage.lib.WideImage');
+                        $img = WideImage::load($source);
+
+                        foreach ($imgConf['img'] as $key => $imgInfo) {
+                            $img = $img->resize($imgInfo['width'], $imgInfo['height'], $imgInfo['fix'], 'down');
+                            $img = $img->resizeCanvas($imgInfo['width'], $imgInfo['height'], 'center', 'center', null, 'down');
+                            $img->saveToFile($path . $key . '.jpg', $imgInfo['quality']);
+                        }
+
+                        $model->image = '420';
+
+                        if (trim($model->content)) {
+                            // add baseUrl to temp images
+                            Yii::import('ext.simple_html_dom');
+                            $html = new simple_html_dom($model->content);
+                            foreach ($html->find('img') as $i => $img) {
+
+                                if (preg_match('{^/upload/temp/object/' . Yii::app()->getSession()->sessionID . '/.+$}', $img->src)) {
+                                    $imgName = substr($img->src, strlen("/upload/temp/object/" . Yii::app()->getSession()->sessionID . "/"));
+                                    $image = WideImage::load($this->baseUrl . $img->src);
+                                    $image->saveToFile($path . $imgName);
+                                    $img->src = $this->baseUrl . "/" . $path . $imgName;
+                                }
+                            }
+                            $content = $html->save();
+                            // upload content images
+                            Yii::import('ext.Myext');
+                            $model->content = Myext::saveContentImages($content, $path, array(
+                                'image_x' => $imgConf['img']['body']['width'],
+                                'image_y' => $imgConf['img']['body']['height'],
+                            ));
+                        }
+                    }
+                    $model->update();
+
+                    Yii::app()->user->setFlash('success', "Tin {$model->title} của bạn đã được cập nhập!");
+                    $this->refresh();
+                }
+            }
+
+            $object = $this->_getObjet($this->user->id);
+
+            $this->render('index', array('model'=>$model, 'object' => $object));
         }
 
         public function actionLogout()
@@ -981,20 +1059,13 @@
                         $userOpenid->is_main = 1;
                         $userOpenid->created = MyDateTime::getCurrentTime();
                         $userOpenid->insert();
-
-                    }    
-
+                    }
                     //login
                     $user->loginAuto();
                     Yii::app()->user->setFlash('success', "Đăng nhập thành công với Openid Yahoo {$userOpenid->email}");
                     $this->_openidRedirect();
-                } 
-
-
+                }
             }
-
-
-
         }
 
         private function _openidRedirect($url = null){
@@ -1013,6 +1084,18 @@
                 'url' => $url
             ));
             Yii::app()->end();
+        }
+
+        private function _getObjet($user_id = null){
+            $criteria = new CDbCriteria();
+
+            $criteria->compare('t.user_id', $user_id);
+            $criteria->order = 't.created DESC';
+            $criteria->limit = 10;
+
+            $object = Object::model()->findAll($criteria);
+
+            return $object;
         }
 
     }
