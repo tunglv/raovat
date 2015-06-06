@@ -1095,6 +1095,12 @@
 
             $object = Object::model()->findAll($criteria);
 
+            foreach($object as $_key => $_val){
+                if($_val->date_end < time()){
+                    $_val->date_total = 0;
+                }
+            }
+
             return $object;
         }
 
