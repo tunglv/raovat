@@ -288,8 +288,31 @@ class Object extends CActiveRecord
             '13' => 'Dịch vụ',
         );
     }
-    public function getTypeLabel() {
-        return $this->typeData[$this->type];
+    public function getTypeLabel($type = '') {
+        $type = $type ? $type : $this->type;
+        return $this->typeData[$type];
+    }
+
+    public function getAliasData(){
+        return array(
+            'may-tinh-may-van-phong' => '1',
+            'bat-dong-san' => '2',
+            'oto' => '3',
+            'dien-thoai-sim-so' => '4',
+            'thoi-trang-my-pham' => '5',
+            'dien-lanh-dien-may' => '6',
+            'dien-tu-ky-thuat-so' => '7',
+            'du-lich-the-thao' => '8',
+            'noi-ngoai-that' => '9',
+            'xe-dap-xe-may' => '10',
+            'do-dung-me-va-be' => '11',
+            'vat-lieu-xay-dung' => '12',
+            'dich-vu' => '13',
+        );
+    }
+
+    public function getAliasLabel($alias = ''){
+        return $this->aliasData[$alias];
     }
 
     public function getNewSyntax(){

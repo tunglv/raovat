@@ -51,25 +51,28 @@ class ObjectController extends WebController {
      */
     public function actionList($alias = null) {
         $this->layout = '//layouts/main';
-//        $catagory = Catagory::model()->getCatagoryByAlias($alias);
-//
-//        $criteria = new CDbCriteria();
-//        $criteria->compare('t.catagory', $catagory->id);
-//        $criteria->compare('t.status', 'ENABLE');
-//        $criteria->order = 't.created DESC';
-//
-//        $dataProvider = new CActiveDataProvider('Product', array(
-//            'criteria'=>$criteria,
-//            'pagination' => array(
-//                'pageSize' => 10,
-//                //'totalItemCount' => 'page',
-//                'pageVar' => 'paged',
-//            ),
-//        ));
 
-//        $viewed_product = $this->_getCookieViewedProduct();
+        $type = Object::model()->getAliasLabel($alias);
 
-        $this->render('list', array());
+        if(!$type) throw new CHttpException(404, 'The requested page does not exist.');
+
+        $criteria = new CDbCriteria();
+        $criteria->addCondition('t.type', $type);
+        $criteria->compare('t.status', 'enable');
+        $criteria->order = 't.id DESC';
+
+        $total = Object::model()->count($criteria);
+
+        $pages = new CPagination($total);
+        $pages->pageSize = 9;
+        $pages->applyLimit($criteria);
+
+        $posts = Object::model()->findAll($criteria);
+
+        $this->render('list', array(
+            'posts' => $posts,
+            'pages' => $pages
+        ));
     }
 
     /**
