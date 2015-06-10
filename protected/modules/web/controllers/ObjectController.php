@@ -57,7 +57,7 @@ class ObjectController extends WebController {
         if(!$type) throw new CHttpException(404, 'The requested page does not exist.');
 
         $criteria = new CDbCriteria();
-        $criteria->addCondition('t.type', $type);
+        $criteria->compare('t.type', $type);
         $criteria->compare('t.status', 'enable');
         $criteria->order = 't.id DESC';
 
@@ -81,11 +81,15 @@ class ObjectController extends WebController {
      * @param $id, $alias of meohay detail
      * @return page detail meohay
      */
-    public function actionDetail($alias = null) {
+    public function actionDetail($alias = null, $id = null) {
         $this->layout = '//layouts/main';
 
+        if(!$id) throw new CHttpException(404, 'The requested page does not exist.');
 
-        $this->render('detail',array());
+        $object = Object::model()->findByPk($id);
+        $same_object = $this->_getSameProduct($object->type, $object->id);
+
+        $this->render('detail',array('object'=>$object, 'same_object' => $same_object));
     }
 
     /**
@@ -94,20 +98,20 @@ class ObjectController extends WebController {
      * @param $type of meohay
      * @return same meohay
      */
-    public function _getSameProduct($catagory = null, $id = null) {
+    public function _getSameProduct($type = null, $id = null) {
         $criteria = new CDbCriteria();
 //        $criteria -> select='t.id';
 
-        $criteria->compare('t.catagory', $catagory);
-        $criteria->compare('t.status', 'ENABLE');
+        $criteria->compare('t.type', $type);
+        $criteria->compare('t.status', 'enable');
         $criteria->order = 't.created DESC';
         $criteria->limit = 5;
 
-        $product = Product::model()->findAll($criteria);
+        $object = Object::model()->findAll($criteria);
 
         $result = array();
 
-        foreach ($product as $value) {
+        foreach ($object as $value) {
             if($value->id != $id) $result[] = $value;
             else continue;
         }

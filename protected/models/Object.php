@@ -337,4 +337,11 @@ class Object extends CActiveRecord
         $contentPath = $imgConf['path']."{$id}/".$size.'.jpg?t='.time();
         return Yii::app()->getBaseUrl(TRUE).'/'.$contentPath;
     }
+
+    public function getUrl($id = null, $alias = null){
+        $id = $id ? $id : $this->id;
+        $alias = $alias ? $alias : $this->alias;
+
+        return Yii::app()->createUrl('/web/object/detail', array('id' => $id, 'alias'=>$alias));
+    }
 }
