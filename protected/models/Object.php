@@ -330,7 +330,7 @@ class Object extends CActiveRecord
         return $new_syntax;
     }
 
-    public function getImageUrl($id = null, $size = 'thumb'){
+    public function getImageUrl($id = null, $size = '157'){
         $id = $id ? $id : $this->id;
 
         $imgConf = Yii::app()->params->object;

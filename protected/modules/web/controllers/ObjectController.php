@@ -87,7 +87,7 @@ class ObjectController extends WebController {
         if(!$id) throw new CHttpException(404, 'The requested page does not exist.');
 
         $object = Object::model()->findByPk($id);
-        $same_object = $this->_getSameProduct($object->type, $object->id);
+        $same_object = $this->_getSameProduct($object->type, $object->id, $object->province_id);
 
         $this->render('detail',array('object'=>$object, 'same_object' => $same_object));
     }
@@ -98,12 +98,13 @@ class ObjectController extends WebController {
      * @param $type of meohay
      * @return same meohay
      */
-    public function _getSameProduct($type = null, $id = null) {
+    public function _getSameProduct($type = null, $id = null, $city_id = null) {
         $criteria = new CDbCriteria();
 //        $criteria -> select='t.id';
 
         $criteria->compare('t.type', $type);
         $criteria->compare('t.status', 'enable');
+        $criteria->compare('t.province_id', $city_id);
         $criteria->order = 't.created DESC';
         $criteria->limit = 5;
 

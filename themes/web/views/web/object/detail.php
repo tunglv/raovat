@@ -3,9 +3,7 @@
     <div class="two-thirds column">
         <!--catagory makeup-->
         <div class="recent-work gallery clearfix">
-
             <div role="application" style="width: 100.2%;" class="slidewrap">
-
                 <div class="two-thirds column"> <h2 class="title"><?php echo $object->title?><span class="line"></span></h2> </div>
                 <div id="fb-root"></div>
                 <script>(function(d, s, id) {
@@ -36,9 +34,21 @@
             </div><!-- End slidewrap -->
 
         </div><!-- End makeup -->
-
     </div>
 
-
+<!--    --><?php //$this->renderPartial('//common/_right_page',array('new_knowledge'=>$new_knowledge, 'new_today'=>$new_today, 'market_price'=>$market_price)); ?>
+    
+    <div class="clients clearfix">
+        <?php if ($same_object) : ?>
+            <div class="sixteen columns">
+                <h2 class="title">Các rao vặt tương tự <span class="line"></span></h2>
+                <ul class="items">
+                    <?php foreach ($same_object as $object): ?>
+                        <li><a title="<?php echo $object->title ?>" href="<?php echo $object->url ?>"><img src="<?php echo $object->imageUrl;?>" alt="<?php echo $object->title ?>"></a></li>
+                    <?php endforeach; ?>
+                </ul><!-- End items -->
+            </div>
+        <?php endif; ?>
+    </div><!-- End clients -->
 
 </div><!-- <<< End Container >>> -->
