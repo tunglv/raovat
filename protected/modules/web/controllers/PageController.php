@@ -53,8 +53,53 @@ class PageController extends WebController {
         $this->layout = '//layouts/main';
 
 //        $product_viewed = $this->_getCookieViewedProduct();
+        $object_1 = $this->_getObjectByType("1");
+        $object_2 = $this->_getObjectByType("2");
+        $object_3 = $this->_getObjectByType("3");
+        $object_4 = $this->_getObjectByType("4");
+        $object_5 = $this->_getObjectByType("5");
+        $object_6 = $this->_getObjectByType("6");
+        $object_7 = $this->_getObjectByType("7");
+        $object_8 = $this->_getObjectByType("8");
+        $object_9 = $this->_getObjectByType("9");
+        $object_10 = $this->_getObjectByType("10");
+        $object_11 = $this->_getObjectByType("11");
+        $object_12 = $this->_getObjectByType("12");
+        $object_13 = $this->_getObjectByType("13");
 
-        $this->render('index', array());
+        $result = array(
+            '1'=>$object_1,
+            '2'=>$object_2,
+            '3'=>$object_3,
+            '4'=>$object_4,
+            '5'=>$object_5,
+            '6'=>$object_6,
+            '7'=>$object_7,
+            '8'=>$object_8,
+            '9'=>$object_9,
+            '10'=>$object_10,
+            '11'=>$object_11,
+            '12'=>$object_12,
+            '13'=>$object_13
+        );
+
+        $this->render('index', array(
+            'result'=>$result,
+        ));
+    }
+
+
+    private function _getObjectByType($type = null){
+        $criteria = new CDbCriteria();
+
+        $criteria->compare('t.type', $type);
+        $criteria->compare('t.status', 'enable');
+        $criteria->order = 't.created DESC';
+        $criteria->limit = 3;
+
+        $object = Object::model()->findAll($criteria);
+
+        return $object;
     }
 
     /**

@@ -315,6 +315,28 @@ class Object extends CActiveRecord
         return $this->aliasData[$alias];
     }
 
+    public function getAliasUrlData(){
+        return array(
+            '1'=>'may-tinh-may-van-phong',
+            '2'=>'bat-dong-san',
+            '3'=>'oto',
+            '4'=>'dien-thoai-sim-so',
+            '5'=>'thoi-trang-my-pham',
+            '6'=>'dien-lanh-dien-may',
+            '7'=>'dien-tu-ky-thuat-so',
+            '8'=>'du-lich-the-thao',
+            '9'=>'noi-ngoai-that',
+            '10'=>'xe-dap-xe-may',
+            '11'=>'do-dung-me-va-be',
+            '12'=>'vat-lieu-xay-dung',
+            '13'>'dich-vu',
+        );
+    }
+
+    public function getAliasUrlType($type = null){
+        return $this->aliasUrlData[$type];
+    }
+
     public function getNewSyntax(){
         $chars = array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
         $new_syntax = '';
@@ -343,5 +365,13 @@ class Object extends CActiveRecord
         $alias = $alias ? $alias : $this->alias;
 
         return Yii::app()->createUrl('/web/object/detail', array('id' => $id, 'alias'=>$alias));
+    }
+
+    public function getUrlList($type = null){
+        $type = $type ? $type : $this->type;
+
+        $alias = $this->getAliasUrlType($type);
+
+        return Yii::app()->createUrl('/web/object/list', array('alias'=>$alias));
     }
 }

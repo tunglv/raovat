@@ -3,6 +3,9 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+    .infinite_navigation{
+        visibility: hidden;
+    }
 </style>
 <div class="clearfix" style="margin: 50px 0 30px"></div>
 <div class="container clearfix">
