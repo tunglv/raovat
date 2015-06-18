@@ -10,12 +10,12 @@
         </div><!-- End Logo -->
 
         <div class="eleven columns" style="padding: 7px 0">
-            <form action="http://kenhdangtin.com/search.html" method="get" style="float: right;">
+            <form action="/rao-vat/ket-qua-tim-kiem" method="post" style="float: right;">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-1" style="display: inline-block">
-                    <input style="border: 1px solid #ddd;padding: 5px;border-radius: 20px;" type="text" name="q" placeholder="Nhập từ khoá cần tìm ..." value="" class="form-control">
+                    <input style="border: 1px solid #ddd;padding: 5px;border-radius: 20px;" type="text" name="keyword" placeholder="Nhập từ khoá cần tìm ..." value="" class="form-control">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: inline-block;">
-                    <select name="category" class="form-control" style="border: 1px solid #ddd;padding: 5px;border-radius: 20px;">
+                    <select name="type" class="form-control" style="border: 1px solid #ddd;padding: 5px;border-radius: 20px;">
                         <option value="" selected="selected">--- Chọn danh mục ---</option><option value="may-tinh-may-van-phong">Máy tính - Máy văn phòng</option><option value="bat-dong-san">Bất động sản</option><option value="o-to">Ô tô</option><option value="dien-thoai-sim-so">Điện thoại - Sim số</option><option value="thoi-trang-my-pham">Thời trang - Mỹ phẩm</option><option value="viec-l-m-tuyen-sinh">Việc làm - Tuyển sinh</option><option value="dien-lanh-dien-may">Điện lạnh - Điện máy</option><option value="dien-tu-ky-thuat-so">Điện tử - Kỹ thuật số</option><option value="du-lich-the-thao">Du lịch- Thể thao</option><option value="noi-that-ngoai-that">Nội thất - Ngoại thất</option><option value="xe-may-xe-dap">Xe máy - Xe đạp</option><option value="do-dung-me-v-be">Đồ dùng - Mẹ và bé</option><option value="vat-lieu-xay-dung">Vật liệu xây dựng</option><option value="7a8-dich-vu">Dịch vụ</option>
                     </select>
                 </div>

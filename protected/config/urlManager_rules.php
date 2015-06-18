@@ -6,7 +6,7 @@ $array_base = array(
     
     '/<module:(admin|gii)>' => '/<module>',
 
-    '/<city_alias:[\w\-]+>' => '/web/page/index',
+//    '/<city_alias:[\w\-]+>' => '/web/page/index',
     
     // user
     '/tai-khoan/dang-nhap-voi-<service:(google|facebook)>' => '/web/user/login',
@@ -20,6 +20,7 @@ $array_base = array(
     //sản phẩn
     '/chuyen-muc/<alias:[\w\-]+>'=>'/web/object/list',
     '/rao-vat/chi-tiet/<alias:[\w\-]+>-<id:\d+>'=>'/web/object/detail',
+    '/rao-vat/ket-qua-tim-kiem'=>'/web/object/search',
 
     // branch
     '/<city_alias:[\w\-]+>/<alias:[\w\-]+>-<id:\d+>' => '/web/branch/view',

@@ -6758,3 +6758,1716 @@ Stack trace:
 REQUEST_URI=/themes/web/files/images/icons/link.png
 HTTP_REFERER=http://meohay.dev/themes/web/files/css/style.css
 ---
+2015/06/18 12:03:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?q=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:03:52 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionSearch(NULL, 'bat-dong-san', '01')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/object/search?q=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01&page=2
+HTTP_REFERER=http://raovat.tung/web/object/search?q=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:04:35 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[HY000]: General error: 1191 Can't find FULLTEXT index matching the column list. The SQL statement executed was: SELECT COUNT(*) FROM `object` `t` WHERE (((t.status = "enable") AND (MATCH (title) AGAINST ('xã đàn' IN BOOLEAN MODE))) AND (t.type = 2)) AND (t.province_id = "01").
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (58)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 12:04:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[HY000]: General error: 1191 Can't find FULLTEXT index matching the column list. The SQL statement executed was: SELECT COUNT(*) FROM `object` `t` WHERE (((t.status = "enable") AND (MATCH (title) AGAINST ('xã đàn' IN BOOLEAN MODE))) AND (t.type = 2)) AND (t.province_id = "01")' in C:\xampp\htdocs\raovat\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\raovat\yii\framework\db\ar\CActiveRecord.php(1546): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(58): CActiveRecord->count(Object(CDbCriteria))
+#3 [internal function]: ObjectController->actionSearch('x\xC3\xA3 \xC4\x91\xC3\xA0n', 'bat-dong-san', '01')
+#4 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#16 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:05:03 [error] [exception.CException] exception 'CException' with message 'Thuộc tính "CDbCriteria.addCondition" chưa được định nghĩa.' in C:\xampp\htdocs\raovat\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(54): CComponent->__set('addCondition', 'MATCH (title) A...')
+#1 [internal function]: ObjectController->actionSearch('x\xC3\xA3 \xC4\x91\xC3\xA0n', 'bat-dong-san', '01')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#3 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#14 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:05:11 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[HY000]: General error: 1191 Can't find FULLTEXT index matching the column list. The SQL statement executed was: SELECT COUNT(*) FROM `object` `t` WHERE (((t.status = "enable") AND (MATCH (title) AGAINST ('xã đàn' IN BOOLEAN MODE))) AND (t.type = 2)) AND (t.province_id = "01").
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (58)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 12:05:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[HY000]: General error: 1191 Can't find FULLTEXT index matching the column list. The SQL statement executed was: SELECT COUNT(*) FROM `object` `t` WHERE (((t.status = "enable") AND (MATCH (title) AGAINST ('xã đàn' IN BOOLEAN MODE))) AND (t.type = 2)) AND (t.province_id = "01")' in C:\xampp\htdocs\raovat\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\raovat\yii\framework\db\ar\CActiveRecord.php(1546): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(58): CActiveRecord->count(Object(CDbCriteria))
+#3 [internal function]: ObjectController->actionSearch('x\xC3\xA3 \xC4\x91\xC3\xA0n', 'bat-dong-san', '01')
+#4 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#16 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:10:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 12:10:24 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionSearch('x\xC3\xA3 \xC4\x91\xC3\xA0n', 'bat-dong-san', '01')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01&page=2
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 14:08:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 14:08:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/bat-dong-san
+---
+2015/06/18 14:08:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-xa-dan-6
+---
+2015/06/18 14:09:04 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-xa-dan-6
+---
+2015/06/18 14:09:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:09:35 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-xa-dan-6
+---
+2015/06/18 14:09:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:09:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=&type=bat-dong-san&city=01
+---
+2015/06/18 14:10:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 14:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 14:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:10:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:47 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:11:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:18:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:57:01 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:57:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:57:04 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(70): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('xa dan', 'bat-dong-san', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 14:57:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 15:02:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 15:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+---
+2015/06/18 15:02:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 15:26:41 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(72): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('nha', 'may-tinh-may-va...', '01')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=nha&type=may-tinh-may-van-phong&city=01
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=x%C3%A3+%C4%91%C3%A0n&type=bat-dong-san&city=01
+---
+2015/06/18 15:26:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=nha&type=may-tinh-may-van-phong&city=01
+---
+2015/06/18 15:26:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=nha&type=bat-dong-san&city=01
+---
+2015/06/18 15:34:47 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(72): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionSearch('nha', 'bat-dong-san', '01')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/web/object/search?keyword=nha&type=bat-dong-san&city=01&page=2
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=nha&type=bat-dong-san&city=01
+---
+2015/06/18 15:35:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-o-kim-lien-5
+---
+2015/06/18 15:35:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=kim+&type=bat-dong-san&city=01
+---
+2015/06/18 15:37:43 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(54): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\protected\extensions\yii-debug-toolbar\components\YiiDebugViewRenderer.php(43): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(93): YiiDebugViewRenderer->renderFile(Object(ObjectController), 'C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#7 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(72): CController->render('list', Array)
+#8 [internal function]: ObjectController->actionSearch('adsfasdfsa', 'bat-dong-san', '10')
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#20 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#21 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=kim+&type=bat-dong-san&city=01
+---
+2015/06/18 15:37:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+---
+2015/06/18 15:39:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "favicon.ico".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+---
+2015/06/18 15:40:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=kim+&type=bat-dong-san&city=01
+---
+2015/06/18 15:41:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+---
+2015/06/18 15:42:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+---
+2015/06/18 15:45:33 [error] [php] Undefined index:  (C:\xampp\htdocs\raovat\protected\models\Object.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+in C:\xampp\htdocs\raovat\protected\models\Object.php (315)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (53)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 15:46:05 [error] [php] Undefined index:  (C:\xampp\htdocs\raovat\protected\models\Object.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/web/object/search
+in C:\xampp\htdocs\raovat\protected\models\Object.php (315)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (53)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 15:46:09 [error] [php] Undefined index:  (C:\xampp\htdocs\raovat\protected\models\Object.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/web/object/search?keyword=xa+dan&type=bat-dong-san&city=01
+in C:\xampp\htdocs\raovat\protected\models\Object.php (315)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (53)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 15:46:11 [error] [php] Undefined index:  (C:\xampp\htdocs\raovat\protected\models\Object.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/web/object/search?keyword=adsfasdfsa&type=bat-dong-san&city=10
+in C:\xampp\htdocs\raovat\protected\models\Object.php (315)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (53)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 15:46:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:46:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "Crevision _ Creative Responsive Theme_files".' in C:\xampp\htdocs\raovat\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(270): CController->missingAction('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('Crevision _ Cre...')
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/Crev...')
+#3 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/web/object/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/web/object/search
+---
+2015/06/18 15:46:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/tim-kem-rao-vat
+---
+2015/06/18 15:47:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "tim-kem-rao-vat".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tim-kem-rao-vat')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/tim-kem-rao-vat
+HTTP_REFERER=http://raovat.tung/tim-kem-rao-vat
+---
+2015/06/18 15:47:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "tim-kem-rao-vat".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tim-kem-rao-vat')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/tim-kem-rao-vat
+HTTP_REFERER=http://raovat.tung/tim-kem-rao-vat
+---
+2015/06/18 15:47:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:48:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "tim-kem-rao-vat".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tim-kem-rao-vat')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/tim-kem-rao-vat
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:48:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:48:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "tim-kem-rao-vat".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tim-kem-rao-vat')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/tim-kem-rao-vat
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:49:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 15:49:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 15:52:14 [error] [php] Undefined index:  (C:\xampp\htdocs\raovat\protected\models\Object.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem
+in C:\xampp\htdocs\raovat\protected\models\Object.php (315)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (53)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 15:54:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 15:54:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 16:24:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-mat-pho-2
+---
+2015/06/18 16:26:15 [error] [php] Undefined index: bat-dong-san (C:\xampp\htdocs\raovat\protected\models\Object.php:293)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem
+in C:\xampp\htdocs\raovat\protected\models\Object.php (293)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (74)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 16:26:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 16:26:28 [error] [php] Undefined index: bat-dong-san (C:\xampp\htdocs\raovat\protected\models\Object.php:293)
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): ObjectController->runAction()
+#2 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): ObjectController->filterAccessControl()
+#5 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): ObjectController->runActionWithFilters()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): ObjectController->run()
+#9 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\raovat\index.php(14): CWebApplication->run()
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem
+in C:\xampp\htdocs\raovat\protected\models\Object.php (293)
+in C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php (74)
+in C:\xampp\htdocs\raovat\index.php (14)
+2015/06/18 16:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 16:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(77): CController->render('list', Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(49): ObjectController->actionSearch()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#18 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem?page=2
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 16:34:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 16:35:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:19:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:19:56 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:20:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:20:07 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:23:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:23:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:23:28 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 17:24:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:25:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:25:39 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:26:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:26:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:27:01 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:27:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-mat-pho-2
+---
+2015/06/18 17:27:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-nha-mat-pho-2
+---
+2015/06/18 17:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:37:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:37:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-may-tinh-lg-g400-7
+---
+2015/06/18 17:38:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-may-tinh-lg-g400-7
+---
+2015/06/18 17:38:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(80): CController->render('list', Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(49): ObjectController->actionSearch()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#18 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem?page=2
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:39:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:39:17 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(80): CController->render('list', Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(49): ObjectController->actionSearch()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#18 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem?page=2
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:39:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:39:51 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(80): CController->render('list', Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(49): ObjectController->actionSearch()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#18 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem?page=2
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:39:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Crevision _ Cre...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/
+---
+2015/06/18 17:40:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "chuyen-muc/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('chuyen-muc/Crev...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/chuyen-muc/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:40:02 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(116): CController->render('list', Array)
+#7 [internal function]: ObjectController->actionList('may-tinh-may-va...')
+#8 C:\xampp\htdocs\raovat\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ObjectController), Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ObjectController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#19 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/list')
+#20 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/chuyen-muc/may-tinh-may-van-phong?page=2
+HTTP_REFERER=http://raovat.tung/chuyen-muc/may-tinh-may-van-phong
+---
+2015/06/18 17:40:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-may-tinh-xach-tay-3
+---
+2015/06/18 17:40:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/chi-tiet/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/chi-tie...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/chi-tiet/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/chi-tiet/ban-may-tinh-xach-tay-3
+---
+2015/06/18 17:41:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:41:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "rao-vat/Crevision _ Creative Responsive Theme_files/facebook.png".' in C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('rao-vat/Crevisi...')
+#1 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/rao-vat/Crevision%20_%20Creative%20Responsive%20Theme_files/facebook.png
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---
+2015/06/18 17:41:48 [error] [exception.CHttpException.404] exception 'CHttpException' in C:\xampp\htdocs\raovat\protected\extensions\yiinfinite-scroll\YiinfiniteScroller.php:42
+Stack trace:
+#0 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(173): YiinfiniteScroller->run()
+#1 C:\xampp\htdocs\raovat\themes\web\views\web\object\list.php(55): CBaseController->widget('ext.yiinfinite-...', Array)
+#2 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\raovat\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#6 C:\xampp\htdocs\raovat\protected\modules\web\controllers\ObjectController.php(80): CController->render('list', Array)
+#7 C:\xampp\htdocs\raovat\yii\framework\web\actions\CInlineAction.php(49): ObjectController->actionSearch()
+#8 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\raovat\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\raovat\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\raovat\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#17 C:\xampp\htdocs\raovat\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('web/object/sear...')
+#18 C:\xampp\htdocs\raovat\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\raovat\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/rao-vat/ket-qua-tim-kiem?page=2
+HTTP_REFERER=http://raovat.tung/rao-vat/ket-qua-tim-kiem
+---

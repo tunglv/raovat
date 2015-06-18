@@ -36,7 +36,7 @@
         </div><!-- End makeup -->
     </div>
 
-<!--    --><?php //$this->renderPartial('//common/_right_page',array('new_knowledge'=>$new_knowledge, 'new_today'=>$new_today, 'market_price'=>$market_price)); ?>
+    <?php $this->renderPartial('//common/_right_page',array('hot_topic'=>$hot_topic)); ?>
     
     <div class="clients clearfix">
         <?php if ($same_object) : ?>

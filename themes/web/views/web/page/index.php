@@ -26,14 +26,14 @@
     <?php foreach($result as $_keyO => $_object):?>
         <?php if(count($_object)>0):?>
         <div class="one-third column item" style="box-shadow: 1px 1px 25px #ccc">
-            <h2 class="title small" style="padding: 5px 10px 10px;"><?php echo Object::model()->getTypeLabel($_keyO)?><span class="line"></span></h2>
+            <h2 class="title small" style="padding: 5px 10px 10px;"><a href="<?php echo Object::model()->getUrlList($_keyO)?>"><?php echo Object::model()->getTypeLabel($_keyO)?><span class="line"></span></a></h2>
 
             <ul class="slider">
             <?php foreach($_object as $_key => $_val):?>
                 <li class="slide" style="<?php if($_key>0):?>clear: both;border-top: 1px dashed #CCC;<?php endif;?>padding-top: 5px;">
                     <div class="two columns">
-                        <a href="http://themes.jozoor.com/wp/crevision/dark/wp-content/uploads/2012/11/thumb-3.jpg" rel="prettyPhoto[]">
-                            <img style="padding-bottom: 5px;" src="http://themes.jozoor.com/wp/crevision/dark/wp-content/uploads/2012/11/thumb-3.jpg" alt="" class="pic column-4">
+                        <a href="<?php echo $_val->url?>">
+                            <img style="padding-bottom: 5px;" src="<?php echo $_val->getImageUrl('','420')?>" alt="" class="pic column-4">
                             <span class="hover-effect zoom"></span>
                         </a>
                     </div>
@@ -42,8 +42,8 @@
                     </div>
                     <div style="padding-top: 10px;">
                         <ul>
-                            <li style="background-image: url(http://themes.jozoor.com/wp/crevision/dark/wp-content/themes/crevision/images/icons/twitter-icon.png);background-repeat: no-repeat;background-position: 0px center; padding-left: 25px;display: inline-block"><?php echo $_val->mobile?></li>
-                            <li style="background-image: url(http://themes.jozoor.com/wp/crevision/dark/wp-content/themes/crevision/images/icons/twitter-icon.png);background-repeat: no-repeat;background-position: 0px center; padding-left: 25px;display: inline-block"><?php echo $_val->province_name?></li>
+                            <li style="background-image: url(https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/phone1-20.png);background-size: contain;background-repeat: no-repeat;background-position: 0px center; padding-left: 25px;display: inline-block"><?php echo $_val->mobile?></li>
+                            <li style="background-image: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-location-outline-20.png);background-size: contain;background-repeat: no-repeat;background-position: 0px center; padding-left: 25px;display: inline-block"><?php echo $_val->province_name?></li>
                         </ul>
                     </div>
                 </li>
